@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "name": "accordium-ui-toolkit",
+  "public": true,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node",
+      "config": {
+        "includeFiles": [".out/**/*.js"]
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/.*", "dest": "index.js" }
+  ]
+}

@@ -1,0 +1,301 @@
+@import "../../scss/acc-variables";
+
+@mixin button-kind($color, $color-hover, $color-on-dark, $color-on-dark-hover, $btn-box-shadow) {
+  background: $color;
+  color: $white;
+  box-shadow: $btn-box-shadow;
+
+  &:hover {
+    background: $color-hover;
+  }
+
+  &.btnFlat {
+    background: transparent;
+    color: $color;
+    box-shadow: initial;
+
+    &:hover {
+      color: $color-hover;
+    }
+  }
+
+  &.btnAlt {
+    background: transparent;
+    border-color: currentColor;
+    color: $color;
+    box-shadow: none;
+
+    &:hover {
+      color: $color-hover;
+    }
+  }
+
+  &.btnOnDark {
+    background: $color-on-dark;
+    color: $black;
+
+    &:hover {
+      background: $color-on-dark-hover;
+      outline-color: $light-gray;
+    }
+
+    &.btnFlat {
+      background: transparent;
+      color: $color-on-dark;
+
+      &:hover {
+        color: $color-on-dark-hover;
+      }
+    }
+
+    &.btnAlt {
+      background: transparent;
+      border-color: currentColor;
+      color: $color-on-dark;
+
+      &:hover {
+        color: $color-on-dark-hover;
+      }
+    }
+  }
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: $btn-border-radius;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $font-family-sans-serif;
+  font-size: $btn-font-size;
+  font-weight: $btn-font-weight;
+  height: $base-unit * 4;
+  justify-content: center;
+  letter-spacing: $btn-letter-spacing;
+  line-height: ($base-unit * 4) - $btn-border-width;
+  text-decoration: none;
+  padding: 0 ($base-unit * 2);
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out,
+  border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, outline 50ms ease-in-out;
+  white-space: nowrap;
+
+
+  &.prime {
+    color: $app-font-color!important;
+    box-shadow: initial!important;
+    background-color: rgba(0, 0, 0, 0.03)!important;
+    border-radius: 3px;
+    &:hover {
+      color: $dark-gray!important;
+      background-color: rgba(0, 0, 0, 0.06)!important;
+    }
+    &.btnLg {
+      height: $base-unit * 5;
+      line-height: ($base-unit * 5) - $btn-border-width;
+    }
+
+    &.btnSm {
+      height: $base-unit * 3 + 2;
+      padding: 0 1px;
+      font-size: 20px;
+      width: $base-unit * 3 + 2;
+    }
+  }
+
+  /*
+  &::after {
+    box-shadow: inset 0 0 0 35px rgba(111,148,182,0);
+  }
+
+  &.btnClick::after {
+    -webkit-animation: anim-effect-radomir 0.5s ease-out forwards;
+    animation: anim-effect-radomir 0.5s ease-out forwards;
+  }
+  */
+
+  .iconBtn {
+    fill: currentColor;
+    margin-right: $base-unit;
+  }
+
+  .iconSpinnerLgBtn,
+  .iconSpinnerMdBtn,
+  .iconSpinnerSmBtn {
+    circle {
+      stroke: currentColor;
+    }
+  }
+
+  & + & {
+    margin-left: $base-unit;
+  }
+/*
+  &:focus {
+    outline: 2px dashed $dark-gray;
+    outline-offset: 4px;
+    z-index: 1;
+  }*/
+  &:focus {
+    outline: none;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.btnPrimary {
+    @include button-kind(
+            $color: $btn-primary-color,
+            $color-hover: $btn-primary-color-hover,
+            $color-on-dark: $btn-primary-color-on-dark,
+            $color-on-dark-hover: $btn-primary-color-on-dark-hover,
+            $btn-box-shadow: $btn-primary-color-box-shadow
+    );
+  }
+
+  &.btnDefault {
+    @include button-kind(
+            $color: $btn-default-color,
+            $color-hover: $btn-default-color-hover,
+            $color-on-dark: $btn-default-color-on-dark,
+            $color-on-dark-hover: $btn-default-color-on-dark-hover,
+            $btn-box-shadow: $btn-default-color-box-shadow
+    );
+  }
+
+  &.btnDanger {
+    @include button-kind(
+            $color: $btn-danger-color,
+            $color-hover: $btn-danger-color-hover,
+            $color-on-dark: $btn-danger-color-on-dark,
+            $color-on-dark-hover: $btn-danger-color-on-dark-hover,
+            $btn-box-shadow: $btn-danger-color-box-shadow
+    );
+  }
+
+  &.btnBrand {
+    @include button-kind(
+            $color: $btn-brand-color,
+            $color-hover: $btn-brand-color-hover,
+            $color-on-dark: $btn-brand-color-on-dark,
+            $color-on-dark-hover: $btn-brand-color-on-dark-hover,
+            $btn-box-shadow: $btn-brand-color-box-shadow
+    );
+  }
+
+  &.btnAccent3 {
+    @include button-kind(
+            $color: $btn-accent3-color,
+            $color-hover: $btn-accent3-color-hover,
+            $color-on-dark: $btn-accent3-color-on-dark,
+            $color-on-dark-hover: $btn-accent3-color-on-dark-hover,
+            $btn-box-shadow: $btn-accent3-color-box-shadow
+    );
+  }
+
+  &.btnLg {
+    font-size: $btn-lg-font-size;
+    height: $base-unit * 5;
+    line-height: ($base-unit * 5) - $btn-border-width;
+  }
+
+  &.btnSm {
+    font-size: $btn-sm-font-size;
+    height: $base-unit * 3;
+    line-height: ($base-unit * 3) - $btn-border-width;
+    padding: 0 $base-unit;
+  }
+
+  &.btnFull {
+    width: 100%;
+  }
+
+  &.btnIconOnly {
+    padding: calc(#{$base-unit} - 1px);
+
+    .iconBtn {
+      margin-right: 0;
+    }
+  }
+
+  &.btnIconRight {
+    .iconBtn {
+      margin-right: 0;
+      margin-left: $base-unit;
+    }
+  }
+}
+
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+
+
+  margin-top: -50px;
+  margin-left: -50px;
+
+
+  opacity: 0;
+  animation: ripple 1s;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+
+/* Radomir */
+@-webkit-keyframes anim-effect-radomir {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.4, 0.4, 1);
+    transform: scale3d(0.4, 0.4, 1);
+  }
+  80% {
+    box-shadow: inset 0 0 0 2px rgba(111,148,182,0.8);
+    opacity: 0.1;
+  }
+  100% {
+    box-shadow: inset 0 0 0 2px rgba(111,148,182,0.8);
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}
+
+@keyframes anim-effect-radomir {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.4, 0.4, 1);
+    transform: scale3d(0.4, 0.4, 1);
+  }
+  80% {
+    box-shadow: inset 0 0 0 2px rgba(111,148,182,0.8);
+    opacity: 0.1;
+  }
+  100% {
+    box-shadow: inset 0 0 0 2px rgba(111,148,182,0.8);
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}
+
+
+// ---

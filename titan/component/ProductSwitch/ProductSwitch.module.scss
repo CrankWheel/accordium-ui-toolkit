@@ -1,0 +1,73 @@
+.bar {
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 0 16px 16px 0;
+  width: 54px;
+  height: 100%;
+  transition: height 0.25s ease-in-out 0s;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -webkit-touch-callout: none;
+  }
+}
+
+.productSwitches {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .product1 {
+    color: #FFFFFF !important;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 76px;
+    left: -27.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 38px;
+  }
+
+  .product2 {
+    color: #FFFFFF !important;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 199px;
+    left: -49.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 38px;
+  }
+
+  .product3 {
+    color: #FFFFFF !important;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 331px;
+    left: -45.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 38px;
+  }
+
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.26)!important;
+  border-radius: 6px;
+  cursor: default;
+}

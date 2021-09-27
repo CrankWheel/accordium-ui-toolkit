@@ -1,0 +1,17 @@
+@import "./acc-variables";
+
+.title, h1 {
+  color: $app-title-font-color;
+}
+
+.caption {
+  color: $app-secondary-font-color;
+}
+
+.link {
+  color: $app-secondary-font-color;
+}
+
+.error {
+  color: $contessa;
+}

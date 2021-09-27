@@ -2,7 +2,7 @@
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 import { configureViewport } from '@storybook/addon-viewport';
-import '../src/lib/style/accordium-ui-toolkit.scss';
+import '../src/ultra/lib/style/accordium-ui-toolkit.scss';
 import { withInfo } from '@storybook/addon-info';
 import { withNotes } from '@storybook/addon-notes';
 import { checkA11y } from '@storybook/addon-a11y';
@@ -11,7 +11,7 @@ import { withCssResources } from '@storybook/addon-cssresources';
 
 configureViewport();
 
-const req = require.context('../src/stories', true);
+const req = require.context('../src/ultra/stories', true);
 
 // Option defaults:
 addDecorator(

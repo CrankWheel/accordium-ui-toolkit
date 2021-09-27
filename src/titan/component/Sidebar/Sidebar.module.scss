@@ -1,0 +1,45 @@
+@import "../../scss/acc-variables";
+
+.sidebar {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: $brand;
+  background: linear-gradient(0deg, $chetwode-blue--onLite 0%, $accent-chetwode-blue 100%);
+  transition: 0.5s;
+  // padding-top: 60px;
+  white-space: nowrap;
+  border-radius: 0 16px 16px 0;
+  overflow: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -webkit-touch-callout: none;
+  }
+  .content {
+    width: 206px;
+    height: 100%;
+    margin-left: 54px;
+  }
+}
+
+.oval {
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  bottom: 90px;
+  left: 115px;
+  z-index: -1;
+}

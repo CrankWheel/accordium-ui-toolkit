@@ -1,0 +1,61 @@
+@import '../../scss/acc-variables';
+
+.indicator {
+  border-radius: 100%;
+  width: 9px;
+  height: 9px;
+  box-sizing: border-box;
+  display: inline-block;
+
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -webkit-touch-callout: none;
+  }
+
+  &.small {
+    width: 4px;
+    height: 4px
+  }
+
+  &.large {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.primary {
+    background: $primary;
+  }
+
+  &.brand {
+    background: $brand;
+  }
+
+  &.danger {
+    background: $danger;
+  }
+
+  &.default {
+    background: $default;
+  }
+
+  &.accent1 {
+    background: $accent-color-1;
+  }
+
+  &.accent2 {
+    background: $accent-color-2;
+  }
+
+  &.accent3 {
+    background: $accent-color-3;
+  }
+}

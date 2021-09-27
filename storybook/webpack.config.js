@@ -1,49 +1,52 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
-module.exports = {
-  module: {
-    rules: [
+// Export a function. Accept the base config as the only param.
+module.exports = async ({ config, mode }) => {
+  // `mode` has a value of 'DEVELOPMENT' or 'PRODUCTION'
+  // You can change the configuration based on that.
+  // 'PRODUCTION' is used when building the static version of storybook.
+
+  // Make whatever fine-grained changes you need
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: {
-              uglyCommentsRegex: [/^eslint-.*/, /^global.*/],
-            },
-          },
-        ],
-        enforce: 'pre',
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              // If you are having trouble with urls not resolving add this setting.
-              // See https://github.com/webpack-contrib/css-loader#url
-              url: false,
-              minimize: true,
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-              sourceMapContents: true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: {
+          uglyCommentsRegex: [/^eslint-.*/, /^global.*/],
+        },
       },
     ],
-  },
-  plugins: [new MiniCssExtractPlugin()],
+    enforce: 'pre',
+  });
+
+  config.module.rules.push({
+    test: /\.(sa|sc|c)ss$/,
+    exclude: /node_modules/,
+    use: [
+      'style-loader',
+      MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: true,
+          sourceMapContents: true,
+        },
+      },
+    ],
+  });
+
+  config.module.rules.push({
+    test: /\.(png|svg|jpg|gif)$/,
+    use: ['file-loader'],
+  });
+
+  config.plugins.push(new MiniCssExtractPlugin());
+
+  // Return the altered config
+  return config;
 };

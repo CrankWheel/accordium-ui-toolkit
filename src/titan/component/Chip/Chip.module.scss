@@ -1,0 +1,137 @@
+@import '../../scss/module/colors.module.scss';
+@import '../../scss/module/variables.module.scss';
+@import '../../scss/acc-variables';
+@import './config.module.scss';
+
+.chip {
+  background-color: var(--chip-background);
+  border-radius: var(--chip-height);
+  color: var(--chip-color);
+  display: inline-block;
+  font-size: var(--chip-font-size);
+  line-height: var(--chip-height);
+  margin-right: var(--chip-margin-right);
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 var(--chip-padding);
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+
+  box-sizing: border-box;
+  font-family: var(--preferred-font);
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -webkit-touch-callout: none;
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.mini {
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    .delete {
+      width: 10px;
+      height: 10px;
+      position: unset;
+      margin: 0 0 0 5px;
+      padding: 0;
+      right: unset;
+    }
+  }
+  &.primary {
+    background: $primary;
+    color: #FFFFFF;
+  }
+  &.brand {
+    background: $brand;
+    color: #FFFFFF;
+  }
+  &.danger {
+    background: $danger;
+    color: #FFFFFF;
+  }
+  &.default {
+    background: $default;
+    color: #FFFFFF;
+  }
+  &.accent1 {
+    background: $accent-color-1;
+    color: $app-font-color;
+  }
+  &.accent2 {
+    background: $accent-color-2;
+    color: $app-font-color;
+  }
+  &.accent3 {
+    background: $accent-color-3;
+    color: #FFFFFF;
+  }
+  &.accent4 {
+    background: $accent-color-4;
+    color: $app-font-color;
+  }
+}
+
+.avatar {
+  padding-left: 0;
+
+  & > [data-react-toolbox='avatar'] {
+    height: var(--chip-height);
+    margin-right: var(--chip-icon-margin-right);
+    vertical-align: middle;
+    width: var(--chip-height);
+
+    & > span {
+      font-size: var(--chip-icon-font-size);
+      line-height: var(--chip-height);
+    }
+  }
+}
+
+.deletable {
+  padding-right: calc(var(--chip-remove-size) + 2 * var(--chip-remove-margin));
+}
+
+.delete {
+  cursor: pointer;
+  display: inline-block;
+  height: var(--chip-remove-size);
+  margin: var(--chip-remove-margin);
+  padding: var(--chip-remove-margin);
+  position: absolute;
+  right: 0;
+  width: var(--chip-remove-size);
+}
+
+.deleteIcon {
+  background: var(--chip-remove-background);
+  border-radius: var(--chip-remove-size);
+  vertical-align: top;
+
+  & .deleteX {
+    fill: transparent;
+    stroke: var(--chip-remove-color);
+    stroke-width: var(--chip-remove-stroke-width);
+  }
+}
+
+.delete:hover .deleteIcon {
+  background: var(--chip-remove-background-hover);
+}

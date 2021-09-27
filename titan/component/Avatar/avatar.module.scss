@@ -1,0 +1,83 @@
+@import "../../scss/acc-variables";
+@import '../../scss/module/colors.module.scss';
+@import '../../scss/module/variables.module.scss';
+@import './config.module.scss';
+
+.avatar {
+  background-color: $accent-color-3;
+  border-radius: 50%;
+  color: var(--avatar-color);
+  display: inline-block;
+  font-size: var(--avatar-font-size);
+  height: var(--avatar-size);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: var(--avatar-size);
+  box-shadow: 0 6px 17px 0 rgba(0,0,0,0.16);
+
+  box-sizing: border-box;
+  font-family: var(--preferred-font);
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -webkit-touch-callout: none;
+  }
+
+  & > svg {
+    fill: currentColor;
+    height: var(--avatar-size);
+    width: 1em;
+  }
+
+  & > img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  &.imageExist {
+    background: rgba(255, 255, 255, 0);
+  }
+
+}
+
+.image {
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.letter {
+  display: block;
+  width: 100%;
+  font-size: 21px;
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  font-weight: 700;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: calc(var(--avatar-size) / 8 * 5);
+}
+
+.normalizedIcon {
+  svg {
+    fill: currentColor;
+    height: var(--avatar-size);
+    width: 1em;
+  }
+}

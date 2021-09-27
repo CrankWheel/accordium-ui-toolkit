@@ -1,0 +1,71 @@
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import Icon from '../Iconography/Icon';
+import Checkbox from './Checkbox';
+import styles from './checkbox.module.scss';
+
+function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  return {
+    value,
+    onChange: handleChange,
+  };
+}
+
+storiesOf('Checkbox Component', module).add('with kind props', () => {
+  class TestCheckbox extends React.Component {
+    state = {
+      check1: true,
+      check2: false,
+      check3: false,
+      check4: true,
+      check5: false,
+    };
+
+    handleChange = (field, value) => {
+      this.setState({ [field]: value });
+    };
+
+    render() {
+      return (
+        <div>
+          <Checkbox checked={this.state.check1} label="Default Checked Checkbox" onChange={this.handleChange.bind(this, 'check1')} />
+          <Checkbox checked={this.state.check2} label="Default Unchecked Checkbox" onChange={this.handleChange.bind(this, 'check2')} />
+          <Checkbox checked disabled label="Disabled checkbox" />
+          <Checkbox
+            checked={this.state.check3}
+            label="Custom Checkbox with Default Text Label"
+            onChange={this.handleChange.bind(this, 'check3')}
+            customChecker={<span className={styles.checkDone} />}
+            customCheckBoxClassName={styles.customChecker}
+          />
+          <Checkbox
+            checked={this.state.check4}
+            label="Custom Checkbox with Custom Text Label"
+            onChange={this.handleChange.bind(this, 'check4')}
+            customChecker={<span className={styles.checkDone} />}
+            customCheckBoxClassName={styles.customChecker}
+            customLabelClassName={styles.customLabel}
+          />
+          <div className={styles.customContainer}>
+            <Checkbox
+              checked={this.state.check5}
+              label="Custom Checkbox with Custom Text Label with word wrap on a fix container size"
+              onChange={this.handleChange.bind(this, 'check5')}
+              customChecker={<span className={styles.checkDone} />}
+              customCheckBoxClassName={styles.customChecker}
+              customLabelClassName={styles.customLabelLong}
+            />
+          </div>
+        </div>
+      );
+    }
+  }
+
+  return <TestCheckbox />;
+});
