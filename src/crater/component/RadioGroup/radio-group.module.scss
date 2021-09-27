@@ -1,0 +1,67 @@
+@import "../../scss/acc-variables";
+@import '../../scss/mixins';
+
+.radioButtonWrapper {
+  display: flex;
+  align-items: center;
+}
+
+$radio_size: 16px;
+
+.radioButton {
+  opacity: 0;
+
+  + label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    .customRadio {
+      vertical-align: middle;
+      margin-right: 5px;
+      width: $radio_size;
+      height: $radio_size;
+      cursor:pointer;
+      border-radius: 50%;
+      position: relative;
+      border: 1px solid $primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        content: "";
+        opacity: 0;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        background-color: $primary;
+        transition: 0.3s opacity;
+        @include absolute-center();
+      }
+    }
+
+    .labelContent {
+      padding-left: 10px;
+
+      > *:nth-child(1) {
+        font-weight: 700;
+        margin-bottom: 1px;
+      }
+    }
+  }
+
+  &:checked + label span::before{
+    opacity: 1;
+  }
+
+  &:disabled + label {
+    opacity: 0.5;
+
+    &, span {
+      cursor: default;
+    }
+  }
+}

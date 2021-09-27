@@ -4,12 +4,14 @@ npm-debug.log
 .vscode
 coverage
 dist-modules
-yarn.lock
 
 yarn-error\.log
 
 \.out/
 
-src/lib/style/accordium-ui-toolkit\.css
+src/ultra/lib/style/accordium-ui-toolkit\.css
 
-src/lib/style/accordium-ui-toolkit\.css\.map
+src/ultra/lib/style/accordium-ui-toolkit\.css\.map
+*.DS_STORE
+/.now/
+/.serverless/

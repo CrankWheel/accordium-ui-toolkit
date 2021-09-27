@@ -2,7 +2,7 @@
 
 ## Installation 
 ```
-yarn add accordium-react-ui-toolkit@"git+https://ashik-accordium:TODOSECRET@bitbucket.org/accordium/accordium-ui-toolkit.git
+yarn add accordium-react-ui-toolkit@git+https://virandry_:<token>@bitbucket.org/accordium/accordium-ui-toolkit.git
 ```
 _It is recommended to remove yarn.lock before adding this toolkit._
 

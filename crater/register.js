@@ -1,0 +1,14 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = register;
+
+require("./scss/common.scss");
+
+function register() {
+  console.log('🎉 Titan UI by Accordium');
+  console.log(`Titan UI Version${process.env.VERSION}`);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9jcmF0ZXIvcmVnaXN0ZXIuanMiXSwibmFtZXMiOlsicmVnaXN0ZXIiLCJjb25zb2xlIiwibG9nIiwicHJvY2VzcyIsImVudiIsIlZFUlNJT04iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTs7QUFFZSxTQUFTQSxRQUFULEdBQW9CO0FBQ2pDQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWSwwQkFBWjtBQUNBRCxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBYSxtQkFBa0JDLE9BQU8sQ0FBQ0MsR0FBUixDQUFZQyxPQUFRLEVBQW5EO0FBQ0QiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJy4vc2Nzcy9jb21tb24uc2Nzcyc7XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIHJlZ2lzdGVyKCkge1xuICBjb25zb2xlLmxvZygn8J+OiSBUaXRhbiBVSSBieSBBY2NvcmRpdW0nKTtcbiAgY29uc29sZS5sb2coYFRpdGFuIFVJIFZlcnNpb24ke3Byb2Nlc3MuZW52LlZFUlNJT059YCk7XG59XG4iXX0=

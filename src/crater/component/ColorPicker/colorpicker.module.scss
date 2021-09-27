@@ -1,0 +1,78 @@
+@import "../../scss/acc-variables";
+
+$pickerWidth: 45px;
+$pickerHeight: 25px;
+
+.colorPicker {
+  display: flex;
+  align-items: center;
+
+  label {
+    color: $default-50-opacity;
+  }
+
+  .colorPickerInputWrapper {
+    width: $pickerWidth;
+    height: $pickerHeight;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-left: 20px;
+    border: 1px solid #F2F2F2;
+    position: relative;
+
+    input[type="color"],
+    input[type="color"]:focus,
+    input[type="color"]:hover,
+    input[type="color"]:active {
+      box-shadow: none;
+      outline: none;
+      width: $pickerWidth + 2px;
+      height: $pickerHeight + 2px;
+      padding: 0;
+      border: none;
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+
+      &[disabled] {
+        opacity: 0.5;
+      }
+
+      &::-webkit-color-swatch-wrapper {
+        padding: 0;
+      }
+
+      &::-webkit-color-swatch {
+        border: none;
+      }
+    }
+  }
+
+
+  // For color pickers with input fields
+  &.withInput {
+    position: relative;
+
+    .inputPicker {
+      width: 100%;
+
+      input {
+        text-transform: uppercase;
+      }
+
+      [class*="counter"] {
+        display: none;
+      }
+    }
+
+    .overlayedColorPicker {
+      position: absolute;
+      right: 11px;
+      top: 11px;
+      width: $pickerHeight;
+      height: $pickerHeight;
+    }
+  }
+}

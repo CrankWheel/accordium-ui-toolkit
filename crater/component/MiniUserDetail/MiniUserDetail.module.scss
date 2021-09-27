@@ -1,0 +1,27 @@
+@import '../../scss/acc-variables';
+@import '../../scss/module/colors.module';
+@import '../../scss/module/variables.module';
+
+.miniUserDetail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .detailContainer{
+    display: flex;
+    flex-direction: column;
+    .name {
+      line-height: 14px;
+    }
+    .details {
+      line-height: 14px;
+    }
+    &.withAvatar {
+      margin-left: 6px;
+      &.leftAvatar {
+        margin-left: 0;
+        margin-right: 6px;
+      }
+    }
+  }
+}

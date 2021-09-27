@@ -1,0 +1,403 @@
+$base-unit: 8px;
+
+$black: #000000;
+$white: #ffffff;
+$dark-gray: #1A2B4A;
+$gray: #3A3C43;
+$light-gray:  #F2F2F2;
+$lighter-gray: #8CA1D9;
+$gray--onLite: #5C6D76;
+$gray--onDark: #919FA8;
+$accent-gray: #89969f;
+$hazy-white: #F1F5FC;
+$zircon-white: #F3F8FF;
+
+
+/*
+Accordium Color Scheme 2.1.0
+*/
+
+$onDark: #F7F7F7;
+$onDark-hover: #D8D8DB;
+
+$light-black-rock: $onDark-hover;
+$accent-black-rock: #6F717A;
+$black-rock: #292A3A;
+$black-rock--onDark: $onDark;
+$dark-black-rock: #292A3A;
+$black-rock--box-shadow: 0px 5px 10px 0px rgba(41, 42, 58, 0.2);
+
+$light-blue: #DFF3FF;
+$accent-blue: #64C4FF;
+$blue: #27ADFF;
+$blue--onDark: #CCECFF;
+$dark-blue: #1B79B3;
+$blue--box-shadow: 0px 5px 10px 0px rgba(39, 173, 255, 0.2);
+
+$light-red: #FBDBDE;
+$accent-red: #EE5461;
+$red: #FF7D7A;
+$red--onDark: #F9C7CB;
+$dark-red: #B35855;
+$red--box-shadow: 0px 5px 10px 0px rgba(255, 125, 122, 0.2);
+
+$light-sunflower: #FFF6E3;
+$accent-sunflower: #FFD37A;
+$sunflower: #FFC145;
+$sunflower--onDark: #FFF0D3;
+$dark-sunflower: #B38730;
+$sunflower--box-shadow: 0px 5px 10px 0px rgba(255, 193, 69, 0.2);
+
+$light-green: #E2F8EE;
+$accent-green: #A7EBCB;
+$green: #6CDEA8;
+$green--onDark: #D6F6E7;
+$dark-green: #4C9B76;
+$green--box-shadow: 0px 5px 10px 0px rgba(108, 222, 168, 0.2);
+
+// Main Color - General purposes: Chip, Indicator color, etc.
+$default: $black-rock; // contrast ratio: 14.13
+$primary: $blue;
+$success: $green;
+$danger: $red;
+$brand: $sunflower;
+
+// gradient value
+$default-company: #37384D;
+$primary-company: #98E7FF;
+$success-company: #8fddb8;
+$danger-company: #FFB4B2;
+$brand-company: #FFD176;
+
+// Level AA required contrast ratio > 4.5
+$default-90-opacity: #3e3f4e; // contrast ratio: 10.37
+$default-80-opacity: #545561; // contrast ratio: 7.37
+$default-70-opacity: #696a75; // contrast ratio: 5.36
+$default-60-opacity: #7f7f89; // contrast ratio: 3.96
+$default-50-opacity: #94959d; // contrast ratio: 2.98
+
+// Typography
+// -------------------------
+
+$font-family-sans-serif: 'Nunito Sans', -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: 'Source Code Pro', 'SourceCodePro', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 14px !default;
+$font-size-extra-extra-large: 21px; // edge case ~ handle with care
+$font-size-extra-large: 19px;
+$font-size-large: 16px;
+$font-size-medium: 14px;
+$font-size-small: 12px;
+$font-size-extra-small: 10px; // edge case ~ handle with care
+
+$font-weight-em-low: 200;
+$font-weight-em-default: 400;
+$font-weight-em-high: 600;
+$font-weight-em-max: 700;
+
+// Header
+$h1-color: $default;
+$h1-font-weight: $font-weight-em-max;
+$h1-font-size: $font-size-extra-extra-large;
+$h2-color: $default-90-opacity;
+$h2-font-weight: $font-weight-em-max;
+$h2-font-size: $font-size-extra-large;
+$h3-color: $default-80-opacity;
+$h3-font-weight: $font-weight-em-max;
+$h3-font-size: $font-size-large;
+$h4-color: $default-70-opacity;
+$h4-font-weight: $font-weight-em-max;
+$h4-font-size: $font-size-medium;
+$h5-color: $default-70-opacity;
+$h5-font-weight: $font-weight-em-max;
+$h5-font-size: $font-size-small;
+
+// Text
+$text1-color: $default;
+$text1-font-weight: $font-weight-em-default;
+$text1-font-size: $font-size-extra-extra-large;
+$text2-color: $default;
+$text2-font-weight: $font-weight-em-default;
+$text2-font-size: $font-size-extra-large;
+$text3-color: $default;
+$text3-font-weight: $font-weight-em-default;
+$text3-font-size: $font-size-large;
+$text4-color: $default;
+$text4-font-weight: $font-weight-em-default;
+$text4-font-size: $font-size-medium;
+$text5-color: $default;
+$text5-font-weight: $font-weight-em-default;
+$text5-font-size: $font-size-small;
+
+$caption-color: $default-60-opacity;
+$caption-font-weight: $font-weight-em-default;
+$caption-font-size: $font-size-small;
+$small-caption-color: $default-60-opacity;
+$small-caption-font-weight: $font-weight-em-default;
+$small-caption-font-size: $font-size-extra-small;
+
+// Apps:
+$app-background: $white;
+$app-title-font-color: $default; // deprecated
+$app-font-color: $default;
+$app-secondary-font-color: $default; // deprecated
+
+// Miscellaneous
+// -------------------------
+
+$hr-border: $light-gray !default;
+
+
+/*
+-----------------------------
+*/
+
+
+// Shadows
+// -------------------------
+
+$shadow-1: rgba(0, 0, 0, 0.3);
+$shadow-2: rgba(0, 0, 0, 0.14);
+$shadow-3: rgba(0, 0, 0, 0.07);
+$shadow-4: rgba(0, 0, 0, 0.035);
+$btn-shadow: rgba(211, 217, 217, 0.50);
+$glow-1: rgba(255, 255, 255, 0.1);
+$glow-2: rgba(255, 255, 255, 0.2);
+$glow-3: rgba(255, 255, 255, 0.4);
+$glow-4: rgba(255, 255, 255, 0.6);
+$glow-5: rgba(255, 255, 255, 1);
+
+// Box Shadows
+// -------------------------
+
+// Box Shadow - key light
+$box-shadow-key-1: 0px 2px 2px 0px rgba(36, 54, 65, 0.1);
+$box-shadow-key-2: 0px 4px 4px 0px rgba(36, 54, 65, 0.1);
+$box-shadow-key-3: 0px 8px 8px 0px rgba(36, 54, 65, 0.1);
+
+// Box Shadow - ambient light
+$box-shadow-amb-1: 0px 0px 2px 0px rgba(36, 54, 65, 0.1);
+$box-shadow-amb-2: 0px 0px 4px 1px rgba(36, 54, 65, 0.1);
+$box-shadow-amb-3: 0px 0px 8px 1px rgba(36, 54, 65, 0.1);
+
+// Type Colors
+// ------------------------
+
+$type-muted: $light-gray !important !default;
+$text-muted: $type-muted; // unused, use $type-muted instead
+$type-inverse: $light-gray;
+$type-inverse-hover: $primary;
+
+$abbr-border-color: $accent-gray !default;
+$headings-small-color: $accent-gray !default;
+$page-header-border-color: $light-gray !default;
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px !default;
+$dl-horizontal-offset: $component-offset-horizontal !default;
+
+$error-color: $red;
+
+// Layout
+// -------------------------
+
+$footer-login-bg: $dark-gray;
+$footer-login-color: $white;
+$footer-login-height: 46px;
+$footer-bg: $blue;
+$footer-divider-color: $accent-blue;
+$navbar-width: 208px;
+
+// Scaffolding
+// -------------------------
+
+$html-bg: $white;
+$body-bg: transparent;
+$text-color: $dark-gray !default;
+
+// Links
+// -------------------------
+
+$link-color: $lighter-gray;
+$link-hover-color: $gray;
+$link-hover-decoration: underline !default;
+
+$link-lowlight-color: $gray;
+$link-lowlight-font-weight: 700;
+
+$link-inverse-color: $accent-blue;
+
+$u-top: 85%;
+$u-btm: 91%;
+$underline-clear: rgba(0, 0, 0, 0);
+$underline-blue: $gray;
+$underline-gray: $accent-gray;
+
+$underline: linear-gradient(rgba(0, 0, 0, 0) $u-top, $underline-blue $u-top, $underline-blue $u-btm, rgba(0, 0, 0, 0) $u-btm);
+$underline-gray: linear-gradient(rgba(0, 0, 0, 0) $u-top, $underline-gray $u-top, $underline-gray $u-btm, rgba(0, 0, 0, 0) $u-btm);
+
+
+$line-height-base: 1.5;
+$line-height-computed: 20px;
+
+
+// Whitespace
+// -------------------------
+
+$whitespace-s: $base-unit / 4;
+$whitespace-m: $base-unit / 2;
+$whitespace-l: $base-unit;
+$whitespace-xl: $base-unit * 2;
+$whitespace-xxl: $base-unit * 3;
+$whitespace-xxxl: $base-unit * 4;
+$whitespace-xxxxl: $base-unit * 5;
+
+// Iconography
+// -------------------------
+
+$spinner-offset: 430;
+$spinner-color: $blue;
+$spinner-duration: 2s;
+$spinner-base-size: 96px;
+
+// Images
+// -------------------------
+
+$avatar-border: 4px solid $dark-gray;
+
+// Components
+// -------------------------
+
+$border-radius-small: 3px !default;
+$border-radius-medium: 5px !default;
+$border-radius-large: 6px !default;
+$border-radius-base: 4px !default;
+$border-radius-none: 0;
+
+// Buttons
+// -------------------------
+
+$btn-border-width: 2px;
+$btn-border-radius: 3px;
+
+$btn-spacing-base: 10px;
+$btn-font-size: 14px;
+$btn-lg-font-size: 14px;
+$btn-sm-font-size: 12px;
+
+$btn-letter-spacing: 0.5px;
+$btn-border-width: 2px;
+$btn-radius: 3px;
+$btn-font-weight: 700;
+
+$btn-primary-color: $blue;
+$btn-primary-font-color: $white;
+$btn-primary-color-box-shadow: $blue--box-shadow;
+$btn-primary-color-hover: $dark-blue;
+$btn-primary-color-on-dark: $onDark;
+$btn-primary-color-on-dark-hover: $onDark-hover;
+
+$btn-default-color: $black-rock;
+$btn-default-font-color: $white;
+$btn-default-color-box-shadow: $black-rock--box-shadow;
+$btn-default-color-hover: $dark-black-rock;
+$btn-default-color-on-dark: $onDark;
+$btn-default-color-on-dark-hover: $onDark-hover;
+
+$btn-danger-color: $red;
+$btn-danger-font-color: $white;
+$btn-danger-color-box-shadow: $red--box-shadow;
+$btn-danger-color-hover: $dark-red;
+$btn-danger-color-on-dark: $onDark;
+$btn-danger-color-on-dark-hover: $onDark-hover;
+
+$btn-brand-color: $black-rock;
+$btn-brand-font-color: $sunflower;
+$btn-brand-color-box-shadow: $black-rock--box-shadow;
+$btn-brand-color-hover: $dark-black-rock;
+$btn-brand-color-on-dark: $sunflower;
+$btn-brand-color-on-dark-hover: $onDark-hover;
+
+$btn-success-color: $green;
+$btn-success-font-color: $white;
+$btn-success-color-box-shadow: $green--box-shadow;
+$btn-success-color-hover: $dark-green;
+$btn-success-color-on-dark: $onDark;
+$btn-success-color-on-dark-hover: $onDark-hover;
+
+// Forms
+// -------------------------
+
+$input-disabled: $light-gray;
+$input-bg: $white !default;
+$input-bg-active: $light-gray;
+$input-bg-disabled: $light-gray !default;
+$progress-border-radius: $border-radius-base !default;
+$input-font-weight: $font-weight-em-high;
+
+$input-color: $default !default;
+$input-color-hover: $accent-blue;
+$input-color-active: $blue;
+$input-border: $light-gray !default;
+$input-border-valid: $green;
+$input-border-invalid: $error-color;
+$input-border-color-hover: $accent-gray !default;
+$input-border-radius: $border-radius-small !default;
+$input-border-radius-large: $border-radius-large !default;
+$input-border-radius-small: $border-radius-small !default;
+$input-border-focus: $gray !default;
+$input-border-width: 1px !default;
+
+$input-invalid-text: $error-color;
+$input-color-placeholder: $accent-gray !default;
+
+$form-label-color: $text-color !default;
+
+$input-height-base: 42px;
+$input-height-large: 42px;
+$input-height-small: 42px;
+
+$input-icon-size: 16px;
+
+$form-group-margin-bottom: 15px;
+
+$legend-color: $dark-gray !default;
+$legend-border-color: #e5e5e5 !default;
+
+$input-group-addon-bg: $light-gray !default;
+$input-group-addon-border-color: $input-border !default;
+$cursor-disabled: not-allowed !default;
+
+$toggle-small-width: 26px;
+$toggle-small-height: 14px;
+$toggle-small-circle-size: 12px;
+$toggle-small-circle-spacing: 1px;
+
+$toggle-medium-width: 33px;
+$toggle-medium-height: 18px;
+$toggle-medium-circle-size: 14px;
+$toggle-medium-circle-spacing: 2px;
+
+$toggle-large-width: 43px;
+$toggle-large-height: 24px;
+$toggle-large-circle-size: 18px;
+$toggle-large-circle-spacing: 3px;
+
+// Lists
+// -------------------------
+
+$list-inline-divider-light-color: $accent-gray;
+$list-inline-divider-border: 1px solid $accent-gray;
+$list-vertical-divider-border: 2px solid $light-gray;
+$list-steps-color: $accent-gray;
+$list-steps-color-current: $accent-blue;
+
+$list-draggable-grip: $light-gray;
+$list-draggable-grip-active: $gray;
+$list-draggable-bg: $light-gray;
+$list-draggable-item-content-padding: 8px 8px 8px 0;
+$list-draggable-item-content-bg: $white;
+
+

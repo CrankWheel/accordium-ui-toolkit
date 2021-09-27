@@ -1,0 +1,50 @@
+@import '../../scss/module/colors.module.scss';
+@import '../../scss/module/variables.module.scss';
+@import './config.module.scss';
+
+@mixin alert-kind($color, $font-color) {
+  background: $color;
+  color: $font-color;
+}
+
+.alertContainer {
+  display: flex;
+  position: relative;
+  padding: 13px 15px;
+  border-radius: 3px;
+  .icon {
+    position: absolute;
+    top: 15px;
+  }
+  .message {
+    padding-left: 30px;
+  }
+
+  &.alertError {
+    @include alert-kind(
+            $color: var(--alert-error-background-color),
+            $font-color: var(--alert-error-font-color)
+    );
+  }
+
+  &.alertSuccess {
+    @include alert-kind(
+            $color: var(--alert-success-background-color),
+            $font-color: var(--alert-success-font-color)
+    );
+  }
+
+  &.alertInfo {
+    @include alert-kind(
+            $color: var(--alert-info-background-color),
+            $font-color: var(--alert-info-font-color)
+    );
+  }
+
+  &.alertWarning {
+    @include alert-kind(
+            $color: var(--alert-warning-background-color),
+            $font-color: var(--alert-warning-font-color)
+    );
+  }
+}

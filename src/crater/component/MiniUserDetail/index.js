@@ -1,0 +1,1 @@
+export MiniUserDetail from './MiniUserDetail';

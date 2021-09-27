@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800&display=swap');
+
+body {
+    background: rgba(0,0,0,.2);
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+}
+
+div#root{
+    margin: 30px 30px 0;
+}
+
+.brand-title {
+    display: flex;
+    align-items: center;
+}

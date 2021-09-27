@@ -1,0 +1,588 @@
+/** @define utilities */
+
+/* Applies to flex container
+   ========================================================================== */
+
+/**
+ * Container
+ */
+
+.flex {
+  display: flex !important;
+}
+
+.flexInline {
+  display: inline-flex !important;
+}
+
+/**
+ * Direction: row
+ */
+
+.flexRow {
+  flex-direction: row !important;
+}
+
+.flexRowReverse {
+  flex-direction: row-reverse !important;
+}
+
+/**
+ * Direction: column
+ */
+
+.flexCol {
+  flex-direction: column !important;
+}
+
+.flexColReverse {
+  flex-direction: column-reverse !important;
+}
+
+/**
+ * Wrap
+ */
+
+.flexWrap {
+  flex-wrap: wrap !important;
+}
+
+.flexNoWrap {
+  flex-wrap: nowrap !important;
+}
+
+.flexWrapReverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+/**
+ * Align items along the main axis of the current line of the flex container
+ */
+
+.flexJustifyStart {
+  justify-content: flex-start !important;
+}
+
+.flexJustifyEnd {
+  justify-content: flex-end !important;
+}
+
+.flexJustifyCenter {
+  justify-content: center !important;
+}
+
+.flexJustifyBetween {
+  justify-content: space-between !important;
+}
+
+.flexJustifyAround {
+  justify-content: space-around !important;
+}
+
+/**
+ * Align items in the cross axis of the current line of the flex container
+ * Similar to `justify-content` but in the perpendicular direction
+ */
+
+.flexAlignItemsStart {
+  align-items: flex-start !important;
+}
+
+.flexAlignItemsEnd {
+  align-items: flex-end !important;
+}
+
+.flexAlignItemsCenter {
+  align-items: center !important;
+}
+
+.flexAlignItemsStretch {
+  align-items: stretch !important;
+}
+
+.flexAlignItemsBaseline {
+  align-items: baseline !important;
+}
+
+/**
+ * Aligns items within the flex container when there is extra
+ * space in the cross-axis
+ *
+ * Has no effect when there is only one line of flex items.
+ */
+
+.flexAlignContentStart {
+  align-content: flex-start !important;
+}
+
+.flexAlignContentEnd {
+  align-content: flex-end !important;
+}
+
+.flexAlignContentCenter {
+  align-content: center !important;
+}
+
+.flexAlignContentStretch {
+  align-content: stretch !important;
+}
+
+.flexAlignContentBetween {
+  align-content: space-between !important;
+}
+
+.flexAlignContentAround {
+  align-content: space-around !important;
+}
+
+/* Applies to flex items
+   ========================================================================== */
+
+/**
+ * Override default alignment of single item when specified by `align-items`
+ */
+
+.flexAlignSelfStart {
+  align-self: flex-start !important;
+}
+
+.flexAlignSelfEnd {
+  align-self: flex-end !important;
+}
+
+.flexAlignSelfCenter {
+  align-self: center !important;
+}
+
+.flexAlignSelfStretch {
+  align-self: stretch !important;
+}
+
+.flexAlignSelfBaseline {
+  align-self: baseline !important;
+}
+
+.flexAlignSelfAuto {
+  align-self: auto !important;
+}
+
+/**
+ * Change order without editing underlying HTML
+ */
+
+.flexOrderFirst {
+  order: -1 !important;
+}
+
+.flexOrderLast {
+  order: 1 !important;
+}
+
+.flexOrderNone {
+  order: 0 !important;
+}
+
+/**
+ * Specify the flex grow factor, which determines how much the flex item will
+ * grow relative to the rest of the flex items in the flex container.
+ *
+ * Supports 1-5 proportions
+ *
+ * 1. Provide all values to avoid IE10 bug with shorthand flex
+ *    - http://git.io/vllC7
+ *
+ *    Use `0%` to avoid bug in IE10/11 with unitless flex basis. Using this
+ *    instead of `auto` as this matches what the default would be with `flex`
+ *    shorthand - http://git.io/vllWx
+ */
+
+.flexGrow1 {
+  flex: 1 1 0% !important; /* 1 */
+}
+
+.flexGrow2 {
+  flex: 2 1 0% !important;
+}
+
+.flexGrow3 {
+  flex: 3 1 0% !important;
+}
+
+.flexGrow4 {
+  flex: 4 1 0% !important;
+}
+
+.flexGrow5 {
+  flex: 5 1 0% !important;
+}
+
+/**
+ * Specify the flex shrink factor, which determines how much the flex item will
+ * shrink relative to the rest of the flex items in the flex container.
+ */
+
+.flexShrink0 {
+  flex-shrink: 0 !important;
+}
+
+.flexShrink1 {
+  flex-shrink: 1 !important;
+}
+
+.flexShrink2 {
+  flex-shrink: 2 !important;
+}
+
+.flexShrink3 {
+  flex-shrink: 3 !important;
+}
+
+.flexShrink4 {
+  flex-shrink: 4 !important;
+}
+
+.flexShrink5 {
+  flex-shrink: 5 !important;
+}
+
+/**
+ * Aligning with `auto` margins
+ * http://www.w3.org/TR/css-flexbox-1/#auto-margins
+ */
+
+.flexExpand {
+  margin: auto !important;
+}
+
+.flexExpandLeft {
+  margin-left: auto !important;
+}
+
+.flexExpandRight {
+  margin-right: auto !important;
+}
+
+.flexExpandTop {
+  margin-top: auto !important;
+}
+
+.flexExpandBottom {
+  margin-bottom: auto !important;
+}
+
+/**
+ * Basis
+ */
+
+.flexBasisAuto {
+  flex-basis: auto !important;
+}
+
+.flexBasis0 {
+  flex-basis: 0 !important;
+}
+
+/*
+ * Shorthand
+ *
+ * Declares all values instead of keywords like 'initial' to work around IE10
+ * https://www.w3.org/TR/css-flexbox-1/#flex-common
+ *
+ * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+ *    This ensures it overrides flex-basis set in other utilities.
+ */
+
+/*
+ * Sizes the item based on the width/height properties
+ */
+
+.flexInitial {
+  flex: 0 1 auto !important;
+  flex-basis: auto !important; /* 1 */
+}
+
+/*
+ * Sizes the item based on the width/height properties, but makes them fully
+ * flexible, so that they absorb any free space along the main axis.
+ */
+
+.flexAuto {
+  flex: 1 1 auto !important;
+  flex-basis: auto !important; /* 1 */
+}
+
+/*
+ * Sizes the item according to the width/height properties, but makes the flex
+ * item fully inflexible. Similar to initial, except that flex items are
+ * not allowed to shrink, even in overflow situations.
+ */
+
+.flexNone {
+  flex: 0 0 auto !important;
+  flex-basis: auto !important; /* 1 */
+}
+
+.m0 {
+  margin: 0 !important;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+.mr0 {
+  margin-right: 0 !important;
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
+}
+
+.ml0 {
+  margin-left: 0 !important;
+}
+
+.m1 {
+  margin: 8px !important;
+}
+
+.mt1 {
+  margin-top: 8px !important;
+}
+
+.mr1 {
+  margin-right: 8px !important;
+}
+
+.mb1 {
+  margin-bottom: 8px !important;
+}
+
+.ml1 {
+  margin-left: 8px !important;
+}
+
+.m2 {
+  margin: 16px !important;
+}
+
+.mt2 {
+  margin-top: 16px !important;
+}
+
+.mr2 {
+  margin-right: 16px !important;
+}
+
+.mb2 {
+  margin-bottom: 16px !important;
+}
+
+.ml2 {
+  margin-left: 16px !important;
+}
+
+.m3 {
+  margin: 32px !important;
+}
+
+.mt3 {
+  margin-top: 32px !important;
+}
+
+.mr3 {
+  margin-right: 32px !important;
+}
+
+.mb3 {
+  margin-bottom: 32px !important;
+}
+
+.ml3 {
+  margin-left: 32px !important;
+}
+
+.m4 {
+  margin: 64px !important;
+}
+
+.mt4 {
+  margin-top: 64px !important;
+}
+
+.mr4 {
+  margin-right: 64px !important;
+}
+
+.mb4 {
+  margin-bottom: 64px !important;
+}
+
+.ml4 {
+  margin-left: 64px !important;
+}
+
+.mxn1 {
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+.mxn2 {
+  margin-left: -16px !important;
+  margin-right: -16px !important;
+}
+
+.mxn3 {
+  margin-left: -32px !important;
+  margin-right: -32px !important;
+}
+
+.mxn4 {
+  margin-left: -64px !important;
+  margin-right: -64px !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.p0 {
+  padding: 0 !important;
+}
+
+.p1 {
+  padding: 8px !important;
+}
+
+.py1 {
+  padding-bottom: 8px !important;
+  padding-top: 8px !important;
+}
+
+.px1 {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.p2 {
+  padding: 16px !important;
+}
+
+.py2 {
+  padding-bottom: 16px !important;
+  padding-top: 16px !important;
+}
+
+.px2 {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.p3 {
+  padding: 32px !important;
+}
+
+.py3 {
+  padding-bottom: 32px !important;
+  padding-top: 32px !important;
+}
+
+.px3 {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+.p4 {
+  padding: 64px !important;
+}
+
+.py4 {
+  padding-bottom: 64px !important;
+  padding-top: 64px !important;
+}
+
+.px4 {
+  padding-left: 64px !important;
+  padding-right: 64px !important;
+}
+
+.pt0 {
+  padding-top: 0 !important;
+}
+
+.pr0 {
+  padding-right: 0 !important;
+}
+
+.pb0 {
+  padding-bottom: 0 !important;
+}
+
+.pl0 {
+  padding-left: 0 !important;
+}
+
+.pt1 {
+  padding-top: 8px !important;
+}
+
+.pr1 {
+  padding-right: 8px !important;
+}
+
+.pb1 {
+  padding-bottom: 8px !important;
+}
+
+.pl1 {
+  padding-left: 8px !important;
+}
+
+.pt2 {
+  padding-top: 16px !important;
+}
+
+.pr2 {
+  padding-right: 16px !important;
+}
+
+.pb2 {
+  padding-bottom: 16px !important;
+}
+
+.pl2 {
+  padding-left: 16px !important;
+}
+
+.pt3 {
+  padding-top: 32px !important;
+}
+
+.pr3 {
+  padding-right: 32px !important;
+}
+
+.pb3 {
+  padding-bottom: 32px !important;
+}
+
+.pl3 {
+  padding-left: 32px !important;
+}
+
+.pt4 {
+  padding-top: 64px !important;
+}
+
+.pr4 {
+  padding-right: 64px !important;
+}
+
+.pb4 {
+  padding-bottom: 64px !important;
+}
+
+.pl4 {
+  padding-left: 64px !important;
+}

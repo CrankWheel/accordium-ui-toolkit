@@ -1,0 +1,21 @@
+@import '../../scss/acc-variables';
+@import '../../scss/module/colors.module';
+@import '../../scss/module/variables.module';
+
+.KeyValueDisplay {
+  display: flex;
+  flex-direction: column;
+  &.inline {
+    flex-direction: row;
+    justify-content: flex-start;
+    .key {
+      margin-right: 8px;
+    }
+  }
+  .value {
+    margin-top: 10px;
+  }
+  & + & {
+    margin-left: 20px;
+  }
+}

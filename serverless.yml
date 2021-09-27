@@ -1,0 +1,17 @@
+service: ui-toolkit
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: production
+  region: ${opt:region, 'ap-southeast-1'}
+
+functions:
+  app:
+    handler: ./index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+package:
+  include:
+    - ./.out/**

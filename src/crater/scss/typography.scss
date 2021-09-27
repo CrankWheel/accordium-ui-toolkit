@@ -1,0 +1,131 @@
+@import "./acc-variables";
+
+h1, .h1 {
+  color: $h1-color;
+  font-size: $h1-font-size;
+  line-height: 30px;
+  font-weight: $h1-font-weight;
+}
+
+h2, .h2 {
+  color: $h2-color;
+  font-size: $h2-font-size;
+  line-height: 27.14285px;
+  font-weight: $h2-font-weight;
+}
+
+h3, .h3 {
+  color: $h3-color;
+  font-size: $h3-font-size;
+  line-height: 22.85714px;
+  font-weight: $h3-font-weight;
+}
+
+h4, .h4 {
+  color: $h4-color;
+  font-size: $h4-font-size;
+  line-height: 20px;
+  font-weight: $h4-font-weight;
+}
+
+h5, .h5 {
+  color: $h5-color;
+  font-size: $h5-font-size;
+  line-height: 17.14285px;
+  font-weight: $h5-font-weight;
+}
+
+.text1 {
+  color: $text1-color;
+  font-size: $text1-font-size;
+  line-height: 30px;
+  font-weight: $text1-font-weight;
+  &Bold {
+    color: $text1-color;
+    font-size: $text1-font-size;
+    line-height: 30px;
+    font-weight: $font-weight-em-max;
+  }
+}
+
+.text2 {
+  color: $text2-color;
+  font-size: $text2-font-size;
+  line-height: 27.14285px;
+  font-weight: $text2-font-weight;
+  &Bold {
+    color: $text2-color;
+    font-size: $text2-font-size;
+    line-height: 27.14285px;
+    font-weight: $font-weight-em-max;
+  }
+}
+
+.text3 {
+  color: $text3-color;
+  font-size: $text3-font-size;
+  line-height: 22.85714px;
+  font-weight: $text3-font-weight;
+  &Bold {
+    color: $text3-color;
+    font-size: $text3-font-size;
+    line-height: 22.85714px;
+    font-weight: $font-weight-em-max;
+  }
+}
+
+.text4 {
+  color: $text4-color;
+  font-size: $text4-font-size;
+  line-height: 20px;
+  font-weight: $text4-font-weight;
+  &Bold {
+    color: $text4-color;
+    font-size: $text4-font-size;
+    line-height: 20px;
+    font-weight: $font-weight-em-max;
+  }
+}
+
+.text5 {
+  color: $text5-color;
+  font-size: $text5-font-size;
+  line-height: 17.14285px;
+  font-weight: $text5-font-weight;
+  &Bold {
+    color: $text5-color;
+    font-size: $text5-font-size;
+    line-height: 17.14285px;
+    font-weight: $font-weight-em-max;
+  }
+}
+
+.caption {
+  color: $caption-color;
+  font-size: $caption-font-size;
+  line-height: 17.14285px;
+  font-weight: $caption-font-weight;
+}
+
+.smallCaption {
+  color: $small-caption-color;
+  font-size: $small-caption-font-size;
+  line-height: 14.28571px;
+  font-weight: $small-caption-font-weight;
+}
+
+.fontDefault90 {
+  color: $default-90-opacity !important;
+}
+
+.fontDefault80 {
+  color: $default-80-opacity !important;
+}
+
+.fontDefault70 {
+  color: $default-70-opacity !important;
+}
+
+.fontDefault60 {
+  color: $default-60-opacity !important;
+}

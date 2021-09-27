@@ -1,0 +1,255 @@
+@import "../../scss/acc-variables";
+
+$border-radius: 6px;
+
+.videoPlayer {
+  background: #000;
+  display: block;
+  position: relative;
+  border-radius: $border-radius;
+
+  .playerWrapper {
+    padding-top: 56.25%;
+    position: relative; /* Player ratio: 100 / (1280 / 720) */
+    .player {
+      align-items: center;
+      background-color: $gray--onDark;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      border-radius: $border-radius;
+      & > video {
+        border-radius: $border-radius;
+      }
+    }
+
+    .firstPlayTrigger {
+      bottom: 0;
+      cursor: pointer;
+      direction: ltr;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 20;
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+
+    .playerOverlay {
+      background-image: linear-gradient(180deg, rgba(67, 104, 143, 0.3) 0%, rgba(35, 59, 90, 0.79) 92.08%, rgba(32, 55, 86, 0.83) 100%);
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 20%;
+        height: 20%;
+
+        circle {
+          -moz-transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+          -o-transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+          -webkit-transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+          transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+        }
+      }
+
+      &:hover {
+        svg {
+          circle {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .videoMetadata {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 2.25em;
+        color: $white;
+        text-shadow: 0 7px 11px 0 rgba(0, 0, 0, .15);
+        font-size: 1.25em;
+        max-height: 45%;
+        overflow: hidden;
+        width: 100%;
+
+        > :not(.videoDuration) {
+          font-weight: 700;
+          font-size: 1.5em;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .videoDuration {
+          margin-top: -1px;
+          height: 1.25em;
+        }
+
+        @media only screen and(max-width: 768px) {
+          padding: 1.25em;
+          font-size: 1em;
+
+          > :not(.videoDuration) {
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.playerError {
+  align-items: center;
+  background-color: $gray--onDark;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.controlsBox {
+  -moz-transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+  -o-transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+  -webkit-transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+  bottom: 0;
+  direction: ltr;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+  transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+  visibility: visible;
+  width: 100%;
+  z-index: 50;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  border-radius: 0 0 $border-radius $border-radius;
+
+  &.fadeOut {
+    -moz-transition: visibility 1.5s, opacity 1.5s;
+    -moz-transition-delay: 2s;
+    -ms-transition: visibility 1.5s, opacity 1.5s;
+    -ms-transition-delay: 2s;
+    -o-transition: visibility 1.5s, opacity 1.5s;
+    -o-transition-delay: 2s;
+    -webkit-transition: visibility 1.5s, opacity 1.5s;
+
+    /*!* Wait a moment before fading out the control bar *!*/
+    -webkit-transition-delay: 2s;
+    opacity: 0;
+    transition: visibility 1.5s, opacity 1.5s;
+    transition-delay: 2s;
+    visibility: hidden;
+  }
+
+  .progressBar {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+  }
+
+  .controls {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+
+    .control {
+      cursor: pointer;
+      display: inline-block;
+      float: left;
+      width: 32px;
+      height: 32px;
+      font-size: 32px;
+      svg {
+        vertical-align: top;
+      }
+      &:visited, &:focus, &:active {
+        outline: none;
+        border-radius: 3px;
+        box-shadow: 0 0 0 2px rgba(29, 173, 255, 1);
+      }
+    }
+
+    .volumeBarWrapper {
+      cursor: pointer;
+      display: inline-block;
+
+      .volumeBar {
+        box-sizing: border-box;
+        display: inline-block;
+        height: 32px;
+        margin-left: 6px;
+        margin-right: 6px;
+        padding-top: 13px;
+      }
+    }
+
+    .duration {
+      box-sizing: border-box;
+      color: #fff;
+      display: inline-block;
+      height: 32px;
+      margin-left: 6px;
+      padding: 5px 0 0 0;
+      vertical-align: top;
+    }
+
+    .fullscreen {
+      float: right !important;
+    }
+  }
+}
+
+.controlIcon {
+  font-size: 32px;
+}
+
+.gradientBg {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  bottom: 0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  height: 130%;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+
+  &.fade-out {
+    -moz-transition: visibility 1.5s, opacity 1.5s;
+    -moz-transition-delay: 2s;
+    -ms-transition: visibility 1.5s, opacity 1.5s;
+    -ms-transition-delay: 2s;
+    -o-transition: visibility 1.5s, opacity 1.5s;
+    -o-transition-delay: 2s;
+    -webkit-transition: visibility 1.5s, opacity 1.5s;
+
+    /*!* Wait a moment before fading out the control bar *!*/
+    -webkit-transition-delay: 2s;
+    opacity: 0;
+    transition: visibility 1.5s, opacity 1.5s;
+    transition-delay: 2s;
+    visibility: hidden;
+  }
+}

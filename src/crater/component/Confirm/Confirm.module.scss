@@ -1,0 +1,37 @@
+@import '../../scss/acc-variables';
+@import '../../scss/module/colors.module';
+@import '../../scss/module/variables.module';
+
+.confirmContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: auto;
+  .title {
+  }
+  .content {
+    margin-top: 8px;
+  }
+  .footer {
+    display: flex;
+    margin-top: 15px;
+  }
+}
+
+.testConfirm {
+  height: 142px;
+  width: 336px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.07);
+}
+
+.testFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testButtons {
+  padding-left: 0!important;
+}

@@ -1,0 +1,219 @@
+@import "../../scss/acc-variables";
+
+input[type="email"].simpleInput,
+input[type="number"].simpleInput,
+input[type="search"].simpleInput,
+input[type="text"].simpleInput,
+input[type="tel"].simpleInput,
+input[type="url"].simpleInput,
+input[type="password"].simpleInput,
+input[type="date"].simpleInput,
+input:not([type]).simpleInput {
+  display: block;
+  width: 100%;
+  height: ($base-unit*4.5);
+  padding: 4px $base-unit;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  font-size: 12px;
+  background-color: $light-gray;
+  border: 0px solid $input-border;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  box-shadow: none;
+  color: $link-lowlight-color;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -webkit-touch-callout: none;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &.alwaysHighlight {
+    border: 1px solid $primary;
+    outline: 0;
+  }
+
+  &.error {
+    border: 1px solid $danger;
+    outline: 0;
+  }
+}
+
+/* Removes awkward default styles on some inputs for iOS */
+
+input[type="email"].simpleInput,
+input[type="number"].simpleInput,
+input[type="search"].simpleInput,
+input[type="text"].simpleInput,
+input[type="tel"].simpleInput,
+input[type="url"].simpleInput,
+input[type="password"].simpleInput,
+input[type="date"].simpleInput,
+input:not([type]).simpleInput {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="email"].simpleInput:focus,
+input[type="number"].simpleInput:focus,
+input[type="search"].simpleInput:focus,
+input[type="text"].simpleInput:focus,
+input[type="tel"].simpleInput:focus,
+input[type="url"].simpleInput:focus,
+input[type="password"].simpleInput:focus,
+input[type="date"].simpleInput:focus,
+input:not([type]).simpleInput:focus {
+  border: 1px solid $primary;
+  outline: 0;
+
+  &.error {
+    border: 1px solid $danger;
+  }
+}
+
+input[type="checkbox"].simpleInput,
+input[type="radio"].simpleInput {
+  display: inline;
+  margin-right: 2px;
+}
+
+html body {
+  input.simpleInput {
+    &.disabled, &:disabled {
+      background-color: $input-disabled;
+      cursor: not-allowed;
+      color: $gray;
+      border-color: $input-border;
+    }
+  }
+}
+
+$form-icon-size-lg: 20px;
+$form-icon-padding-lg: (($base-unit*5) - $form-icon-size-lg) / 2;
+$form-icon-size-sm: 12px;
+$form-icon-padding-sm: (($base-unit*3) - $form-icon-size-sm) / 2;
+input.simpleInput {
+  :not(input[type="radio"], input[type="checkbox"]) {
+    height: $base-unit * 4.5;
+  }
+
+  &.input-lg {
+    height: $base-unit * 6;
+    font-size: $font-size-large;
+
+    & ~ .icon {
+      font-size: $form-icon-size-lg;
+      right: $form-icon-padding-lg;
+      bottom: $form-icon-padding-lg;
+    }
+  }
+
+  &.input-sm {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: $base-unit * 3;
+    font-size: $font-size-small;
+
+    & ~ .icon {
+      font-size: $form-icon-size-sm;
+      right: $form-icon-padding-sm;
+      bottom: $form-icon-padding-sm;
+    }
+  }
+}
+
+input[type="email"].invalid.simpleInput,
+input[type="number"].invalid.simpleInput,
+input[type="search"].invalid.simpleInput,
+input[type="text"].invalid.simpleInput,
+input[type="tel"].invalid.simpleInput,
+input[type="url"].invalid.simpleInput,
+input[type="password"].invalid.simpleInput,
+input[type="date"].invalid.simpleInput,
+input:not([type]).invalid.simpleInput {
+  border: 1px solid $input-border-invalid;
+}
+
+input[type="email"].valid.simpleInput,
+input[type="number"].valid.simpleInput,
+input[type="search"].valid.simpleInput,
+input[type="text"].valid.simpleInput,
+input[type="tel"].valid.simpleInput,
+input[type="url"].valid.simpleInput,
+input[type="password"].valid.simpleInput,
+input[type="date"].valid.simpleInput,
+input:not([type]).valid.simpleInput {
+  border: 1px solid $input-border-valid;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputIconContainer {
+
+  & > .icon {
+    fill: $gray;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+
+  & > input:first-child {
+    padding-left: 37px;
+  }
+}
+
+.pill {
+  border-radius: 10px !important;
+}
+
+.caption {
+  position: absolute;
+  right: 16px;
+  top: 9px;
+  font-size: 12px;
+  color: $caption-color;
+  padding: 0 5px;
+  transition: .3s all ease-in-out;
+  border-radius: 3px;
+}
+
+input[type="email"].simpleInput,
+input[type="number"].simpleInput,
+input[type="search"].simpleInput,
+input[type="text"].simpleInput,
+input[type="tel"].simpleInput,
+input[type="url"].simpleInput,
+input[type="password"].simpleInput,
+input[type="date"].simpleInput,
+input:not([type]).simpleInput {
+  &:focus + .caption {
+    top: -10px;
+    background: $white;
+    border: 1px solid $primary;
+    outline: 0;
+    line-height: 1.15;
+  }
+
+  &.error:focus + .caption {
+    border: 1px solid $danger;
+  }
+
+}
