@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  #container {
+    transition: .15s all ease-in-out;
+  }
+
+  &.blur {
+    > #container, > #root, > #app, > .app {
+      filter: blur(2px);
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  max-height: 100%;
+}
+
+select {
+  line-height: 1.75;
+  padding: 8px 8px;
+  &:not([multiple]) {
+    height: 36px;
+    vertical-align: middle;
+  }
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+th {
+  font-weight: bold;
+  line-height: inherit;
+  padding: 4px 16px;
+  text-align: left;
+}
+
+td {
+  line-height: inherit;
+  padding: 4px 16px;
+}
+
+th {
+  vertical-align: bottom;
+}
+
+td {
+  vertical-align: top;
+}
+
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-bottom: .5em;
+  margin-top: 1em;
+}
+
+p, dl, ol, ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+pre, code, samp {
+  font-family: 'Source Code Pro', Consolas, monospace;
+  font-size: inherit;
+}
+
+pre {
+  margin-bottom: 16px;
+  margin-top: 0;
+  overflow-x: scroll;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+body {
+  background-color: #fff;
+  color: #111;
+}
+
+a {
+  color: #0074d9;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+pre, code {
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+hr {
+  border: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.125);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}

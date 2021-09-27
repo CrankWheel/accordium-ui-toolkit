@@ -1,0 +1,341 @@
+$medium-screen: 992px !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+
+.accordium.modal-wrapper {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  border: 0;
+  display: flex !important;
+  height: 100%;
+  left: 0 !important;
+  margin: 0;
+  min-height: 1em;
+  outline: 0;
+  padding: 0;
+  position: fixed;
+  text-align: center;
+  text-shadow: none;
+  text-transform: none;
+  top: 0 !important;
+  user-select: none;
+  vertical-align: baseline;
+  width: 100%;
+  z-index: 999;
+  &.scrolling {
+    overflow: auto;
+  }
+}
+
+.accordium.modal {
+  -moz-user-select: text;
+  -ms-flex: 0 0 auto;
+  -ms-user-select: text;
+  -webkit-box-flex: 0;
+  -webkit-box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
+  -webkit-transform-origin: 50% 25%;
+  -webkit-user-select: text;
+  align-self: center;
+  background: $color-app-background;
+  border: 0;
+  border-radius: 0.28571429rem;
+  box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
+  display: block;
+  flex: 0 0 auto;
+  margin: 0 auto;
+  text-align: left;
+  transform-origin: 50% 25%;
+  user-select: text;
+  will-change: top, left, margin, transform, opacity;
+  z-index: 1001;
+  > :first-child:not(.modal-close),
+  > .icon:first-child + * {
+    border-top-left-radius: 0.28571429rem;
+    border-top-right-radius: 0.28571429rem;
+  }
+
+  > :last-child {
+    border-bottom-left-radius: 0.28571429rem;
+    border-bottom-right-radius: 0.28571429rem;
+  }
+
+  .modal-header {
+    -webkit-box-shadow: none;
+    background: #fff;
+    border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+    box-shadow: none;
+    box-sizing: border-box;
+    color: $color-type-gray;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 1.5rem;
+    width: 100%;
+    a {
+      color: $color-type-gray;
+      padding: 25px;
+      transition: .3s all ease-in-out;
+      &.active, &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+
+  .modal-content {
+    background: #f6f8fa;
+    box-sizing: border-box;
+    color: $color-type-gray;
+    display: block;
+    float: left;
+    font-size: 1em;
+    line-height: 1.4;
+    overflow: auto;
+    padding: 0 2.5rem;
+    position: relative;
+    width: 100%;
+    &.scrolling {
+      max-height: calc(70vh);
+      overflow: auto;
+    }
+  }
+
+  .modal-close {
+    background: rgba(255,255,255,0);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2em;
+    height: 3.25rem;
+    opacity: 0.8;
+    padding: 0.625rem 0 0 0;
+    position: absolute;
+    right: -2.5rem;
+    top: -3.5rem;
+    width: 3.25rem;
+    z-index: 1;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .modal-footer {
+    background: $color-app-background;
+    border: 0;
+    border-radius: 0 0 2px 2px;
+    box-sizing: border-box;
+    color: $color-type-gray;
+    float: left;
+    padding: 12px;
+    text-align: right;
+    width: 100%;
+  }
+}
+
+
+.accordium.modal-overlay {
+  background: rgba(20, 34, 51, .5);
+  bottom: 0;
+  cursor: pointer;
+  display: block;
+  height: 125%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: -25%;
+  width: 100%;
+  will-change: opacity;
+  z-index: 999;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+
+  100% {
+    stroke-dasharray: 100 100;
+  }
+}
+
+/*--------------
+      Size
+---------------*/
+
+.accordium.modal {
+  font-size: 1rem;
+}
+
+/* Mini */
+.accordium.xs.modal > .header:not(.acc) {
+  font-size: 1.3em;
+}
+
+/* Mini Modal Width */
+@media only screen and (max-width: 767px) {
+  .accordium.xs.modal {
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .accordium.xs.modal {
+    width: 35.2%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .accordium.xs.modal {
+    width: 340px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .accordium.xs.modal {
+    width: 360px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .accordium.xs.modal {
+    width: 380px;
+  }
+}
+
+/* mini */
+.accordium.sm.modal > .header:not(.acc) {
+  font-size: 1.3em;
+}
+
+/* Tiny Modal Width */
+@media only screen and (max-width: 767px) {
+  .accordium.sm.modal {
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .accordium.sm.modal {
+    width: 52.8%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .accordium.sm.modal {
+    width: 510px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .accordium.sm.modal {
+    width: 540px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .accordium.sm.modal {
+    width: 570px;
+  }
+}
+
+/* Small */
+.accordium.md.modal > .header:not(.acc) {
+  font-size: 1.3em;
+}
+
+/* Small Modal Width */
+@media only screen and (max-width: 767px) {
+  .accordium.md.modal {
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .accordium.md.modal {
+    width: 70.4%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .accordium.md.modal {
+    width: 680px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .accordium.md.modal {
+    width: 780px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .accordium.md.modal {
+    width: 760px;
+  }
+}
+
+/* Large Modal Width */
+.accordium.lg.modal > .header {
+  font-size: 1.6em;
+}
+
+@media only screen and (max-width: 767px) {
+  .accordium.lg.modal {
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .accordium.lg.modal {
+    width: 88%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .accordium.lg.modal {
+    width: 1020px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .accordium.lg.modal {
+    width: 1080px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .accordium.lg.modal {
+    width: 1140px;
+  }
+}
+
+/* Tablet and Mobile */
+@media only screen and (max-width: 991px) {
+  .accordium.modal > .modal-header {
+    padding-right: 2.25rem;
+  }
+
+  .accordium.modal > .modal-close {
+    color: rgba(0, 0, 0, 0.87);
+    right: 1rem;
+    top: 0;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .accordium.modal > .modal-header {
+    padding: 0.75rem 1rem !important;
+    padding-right: 2.25rem !important;
+  }
+
+  .accordium.modal > .modal-content {
+    display: block;
+    padding: 0 2.5rem;
+  }
+
+  .accordium.modal > .modal-close {
+    font-size: 1.5em !important;
+    right: 0.5rem !important;
+    top: -0.5rem !important;
+  }
+}

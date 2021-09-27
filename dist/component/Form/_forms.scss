@@ -1,0 +1,86 @@
+.accordium.input-field {
+  margin-bottom: 12.5px;
+  position: relative;
+  width: 100%;
+  &.white-bg {
+    input[type="text"], input[type="password"], textarea {
+      background: $color-white !important;
+      box-shadow: 0 10px 50px -25px rgba($color-shadows, .25);
+    }
+  }
+
+  &.no-margin {
+    margin: 0 !important;
+  }
+
+  &.no-margin-bottom {
+    margin-bottom: 0;
+  }
+
+  &.error {
+    input[type="text"], input[type="password"] {
+      border-bottom: solid 1px $color-red !important;
+    }
+
+    label {
+      color: $color-red !important;
+    }
+  }
+
+  &.valid {
+    input[type="text"], input[type="password"] {
+      border-bottom: solid 1px $color-green !important;
+    }
+
+    label {
+      color: $color-green !important;
+    }
+  }
+
+  .tooltip-top {
+    background: #192a40;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 12px;
+    left: 0;
+    opacity: 0;
+    padding: 12.5px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    top: 12px;
+    transform: translateY(-120%);
+    transition: .25s all ease-in-out;
+    width: auto;
+    z-index: 2;
+    &.show {
+      opacity: 1;
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:after {
+      border: 10px solid rgba(25, 42, 64, 0);
+      border-top-color: #192a40;
+      content: " ";
+      height: 0;
+      left: 50%;
+      margin-left: -10px;
+      pointer-events: none;
+      position: absolute;
+      top: 95%;
+      transition: .25s all ease-in-out;
+      width: 0;
+    }
+  }
+}
+
+// Borders
+$border-radius: 5px;
+@import "input-field";
+@import "checkbox";
+@import "switch";
+@import "range-slider";
+@import "radio-button";

@@ -1,0 +1,78 @@
+.accordium.card.action-card{
+  flex-direction: unset;
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    z-index: 999;
+    .description {
+      .title {
+        color: $color-blue;
+      }
+
+      .caption{
+        color: $color-type-gray;
+      }
+    }
+  }
+
+  .card-thumbnail {
+
+  }
+
+  .icon-wrap{
+    @media (max-width: 1280px){
+      display: block;
+      float: none !important;
+      height: auto;
+      height: 50px;
+      margin: 50px 18px;
+      margin: 30px auto;
+      text-align: right;
+      width: 70px;
+    }
+    float: left;
+    height: 50px;
+    margin: 50px 18px;
+    text-align: right;
+    width: 70px;
+    svg{
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .card-description{
+    color: $color-type-gray;
+    display: block;
+    float: left;
+    font-weight: 100;
+    margin-top: 55px;
+    transition: all .3s ease-in-out;
+    .card-title {
+      font-size: 17px;
+      user-select: none;
+    }
+
+    .card-caption{
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 5px;
+      opacity: .5;
+      user-select: none;
+    }
+
+    @media(max-width: 1280px){
+      color: #5a788f;
+      display: block;
+      float: left;
+      font-size: 17px;
+      font-weight: 100;
+      margin: 0 auto 30px auto;
+      text-align: center;
+      transition: all .3s ease-in-out;
+      width: 100%;
+    }
+  }
+}

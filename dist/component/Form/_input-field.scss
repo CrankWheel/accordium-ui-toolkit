@@ -1,0 +1,134 @@
+.accordium.input-field {
+  /* Text input */
+  input[type="text"], input[type="password"], textarea {
+    &.no-resize {
+      resize: none;
+    }
+
+    &:focus{
+      outline: none;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px $color-lightest-gray inset;
+    }
+    background: $color-white;
+    border: 0;
+    border-bottom: solid 2px $color-lightest-gray;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    box-sizing: border-box;
+    color: $color-type-gray;
+    font-size: $medium;
+    padding: 27px 12px 10px 12px;
+    transition: .15s border cubic-bezier(0.4, 0, 1, 1);
+    width: 100%;
+    &.title {
+      background: $color-white;
+      font-size: 12px;
+      padding: 27px 12px 10px;
+    }
+
+    &:hover {
+      border-bottom: solid 2px #d8dbe0;
+    }
+
+    &:focus {
+      border-bottom: solid 2px $color-blue;
+      & ~ label {
+        color: $color-blue;
+        font-size: 10px;
+        opacity: 1;
+        top: 16.5px;
+      }
+    }
+  }
+
+  &.error{
+    input[type="text"], input[type="password"], textarea{
+      &:focus{
+        border-bottom: solid 2px $color-red !important;
+      }
+    }
+  }
+
+  label {
+    color: $color-light-gray;
+    font-size: 12px;
+    left: 12px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .15s all cubic-bezier(0.4, 0, 1, 1);
+    &.textarea-label {
+      background: transparent;
+      top: 25px;
+      &.not-empty {
+        top: 16.5px;
+      }
+    }
+
+    &.not-empty {
+      font-size: 10px;
+      top: 15px !important;
+    }
+
+    &.range-label{
+      position: static;
+    }
+  }
+  /* Textarea */
+  &.textarea {
+    box-sizing: border-box;
+    padding: 0 12.5px;
+    &.no-padding {
+      padding: 0 !important;
+      label {
+        left: 12px;
+        top: 25px;
+      }
+
+      textarea:focus {
+        & ~ label {
+          top: 16.5px !important;
+        }
+      }
+    }
+
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+
+  }
+
+  .range-wrap{
+    height: 20px;
+  }
+  /* Search */
+  &.search {
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 12.5px 0;
+    width: 100%;
+    svg.search-icon {
+      position: absolute;
+      right: 15px;
+      top: 32.5px;
+    }
+
+    input {
+      border: 0;
+      border-radius: $border-radius;
+      padding: 18.5px 42px 18.5px 12px;
+      &:hover {
+        border: 0;
+      }
+
+      &:focus {
+        border: 0;
+      }
+    }
+  }
+}

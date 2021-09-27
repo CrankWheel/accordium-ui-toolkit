@@ -1,0 +1,84 @@
+{
+  "name": "accordium-react-ui-toolkit",
+  "description": "UI Component Toolkit for Accordium Apps",
+  "version": "0.1.6",
+  "homepage": "https://www.accordium.com",
+  "author": "Accordium Developer",
+  "license": "MIT",
+  "dependencies": {
+    "rc-slider": "^8.6.5",
+    "react-debounce-input": "^3.2.0",
+    "react-is": "^16.8.1",
+    "react-player": "^1.9.3",
+    "react-spring": "^8.0.7",
+    "react-textarea-autosize": "^7.0.3",
+    "screenfull": "^4.0.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist && sass src/lib/style/accordium-ui-toolkit.scss:src/lib/style/accordium-ui-toolkit.css --style compressed && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__ --no-comments",
+    "storybook-build": "build-storybook -c storybook -o .out",
+    "storybook": "start-storybook -p 3002 -c storybook",
+    "sass-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' --verbose --no-exit"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-a11y": "^4.1.6",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-cssresources": "^4.1.6",
+    "@storybook/addon-info": "^4.1.6",
+    "@storybook/addon-notes": "^4.1.6",
+    "@storybook/addon-options": "^4.1.4",
+    "@storybook/addon-storysource": "^4.1.4",
+    "@storybook/addon-viewport": "^4.1.6",
+    "@storybook/react": "^4.1.4",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "sass": "^1.16.1",
+    "sass-lint-auto-fix": "^0.15.1",
+    "sass-loader": "^7.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/accordium/accordium-ui-toolkit"
+  }
+}

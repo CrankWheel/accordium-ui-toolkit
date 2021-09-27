@@ -1,0 +1,108 @@
+// Colors HEX
+$color-red:                 #ea406d;
+$color-green:               #2fc9af;
+$color-blue:                #17c0f7;
+$color-orange:              #f4b171;
+$color-dark-blue:           #233b5c;
+$color-purple:              #786dc4;
+$color-shadows:             #1c2f49;
+$color-type-gray:           #454f5e;
+$color-white:               #fff;
+$color-black:               #000;
+$color-lighter-gray: #8aa5bd;
+$color-light-gray:          #b0b7c1;
+$color-lightest-gray:       #fafafa;
+$color-app-background:      #f6f8fa;
+$color-template-background: #fef6e7;
+$color-video:               #9776d6;
+
+// Colors RGB
+$color-red-rgb:            rgb(234, 64, 109);
+$color-green-rgb:          rgb(47, 201, 175);
+$color-blue-rgb:           rgb(23, 192, 247);
+$color-orange-rgb:         rgb(244, 177, 113);
+$color-dark-blue-rgb:      rgb(35, 59, 92);
+$color-type-gray-rgb:      rgb(90, 120, 143);
+$color-white-rgb:          rgb(255, 255, 255);
+$color-black-rgb:          rgb(0,0,0);
+$color-light-gray-rgb:     rgb(176, 183, 193);
+$color-lightest-gray-rgb:  rgb(250, 250, 250);
+$color-shadows-rgb:        rgb(28, 47, 73);
+$color-app-background-rgb: rgb(246, 248, 250);
+$color-video-rgb:          rgb(151, 118, 214);
+$color-purple-rgb:         rgb(120, 109, 196);
+
+// User Profile / Disc Colours
+$colors: (
+        "user-1": #f44336,
+        "user-2": #3f51b5,
+        "user-3": #009688,
+        "user-4": #e91e63,
+        "user-5": #2196f3,
+        "user-6": #357a38,
+        "user-7": #9c27b0,
+        "user-8": #0276aa,
+        "user-9": #618833,
+        "user-10": #b28704,
+        "user-11": #673ab7,
+        "user-12": #8f9a27,
+        "user-13": #ff5722,
+        "user-14": #b26a00,
+        "user-15": #505336,
+        "user-16": #683a33,
+);
+
+$colors-faded: (
+        "user-1": #f9a09a,
+        "user-2": #9ea7d9,
+        "user-3": #80cac3,
+        "user-4": #f38eb0,
+        "user-5": #f6f8fa,
+        "user-6": #9abc9b,
+        "user-7": #cd93d7,
+        "user-8": #80bad4,
+        "user-9": #b0c399,
+        "user-10": #d8c381,
+        "user-11": #b29cda,
+        "user-12": #c7cc93,
+        "user-13": #ffab90,
+        "user-14": #d8b480,
+        "user-15": #a7a89a,
+        "user-16": #b39c99
+);
+
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+@function color-faded($key) {
+  @return map-get($colors-faded, $key);
+}
+
+// User discs
+@for $i from 1 through 16 {
+  .color-user-#{$i}{
+    background: color("user-#{$i}") !important;
+  }
+}
+
+// Shadows
+@for $i from 1 through 16 {
+  .color-shadow-#{$i}{
+    box-shadow: 0 5px 22px 0 rgba(color("user-#{$i}"),.3);
+  }
+}
+
+// SVG Fill
+@for $i from 1 through 16 {
+  .color-fill-#{$i}{
+    fill: color("user-#{$i}");
+  }
+}
+
+// Background Fill
+@for $i from 1 through 16 {
+  .color-background-#{$i}{
+    background: rgba(color("user-#{$i}"), .2);
+  }
+}
