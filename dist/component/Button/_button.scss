@@ -1,0 +1,304 @@
+$base-btn-px: .3125rem;
+$base-btn-py: .3125rem;
+$offset: 37.4;
+
+@function calc-px($multiplier) {
+  @return $base-btn-px * $multiplier;
+}
+
+@function calc-py($multiplier) {
+  @return $base-btn-py * $multiplier;
+}
+
+.accordium.btn {
+  -webkit-appearance: none;
+  align-self: center;
+  background-position: center;
+  box-shadow: 0 5px 22px 0 rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  height: auto;
+  text-decoration: none;
+  transition: 0.5s all;
+  vertical-align: middle;
+  &.block {
+    display: block;
+    padding-left: auto !important;
+    padding-right: auto !important;
+    width: 100%;
+  }
+
+  &.xs {
+    padding: calc-py(1) calc-px(1.75);
+  }
+
+  &.sm {
+    padding: calc-py(1.75) calc-px(2.5);
+  }
+
+  &.md {
+    padding: calc-py(2.5) calc-px(3);
+  }
+
+  &.lg {
+    padding: calc-py(3) calc-px(4);
+  }
+
+  &.xl {
+    padding: calc-py(4) calc-px(5);
+  }
+
+  &.blue {
+    background: $color-blue;
+    color: $color-white;
+    &:hover, &:focus {
+      background: #16b0e3 radial-gradient(circle, transparent 1%, #16b0e3 1%) center/15000%;
+      box-shadow: 0 5px 22px 0 rgba($color-blue-rgb, 0.3);
+      outline: none;
+    }
+
+    &:active {
+      background-color: #18c6ff;
+      background-size: 100%;
+      outline: none;
+      transition: background 0s;
+    }
+  }
+
+  &.purple {
+    background: $color-purple;
+    color: $color-white;
+    &:hover, &:focus {
+      background: #675cb0 radial-gradient(circle, transparent 1%, #675cb0 1%) center/15000%;
+      box-shadow: 0 5px 22px 0 rgba($color-purple, 0.3);
+      outline: none;
+    }
+
+    &:active {
+      background-color: #7e72ce;
+      background-size: 100%;
+      outline: none;
+      transition: background 0s;
+    }
+  }
+
+  &.white {
+    background: $color-white;
+    color: $color-type-gray;
+    &:hover, &:focus {
+      background: #e8e8e8 radial-gradient(circle, transparent 1%, #e8e8e8 1%) center/15000%;
+      box-shadow: 0 5px 25px -10px rgba($color-blue-rgb, 0.3);
+      outline: none;
+    }
+
+    &:active {
+      background-color: #f5f5f5;
+      background-size: 100%;
+      outline: none;
+      transition: background 0s;
+    }
+  }
+
+  &.green {
+    background: $color-green;
+    color: $color-white;
+    &:hover, &:focus {
+      background: #2eb59b radial-gradient(circle, transparent 1%, #2eb59b 1%) center/15000%;
+      box-shadow: 0 5px 22px 0 rgba($color-green-rgb, 0.3);
+      outline: none;
+    }
+
+    &:active {
+      background-color: #30d3b8;
+      background-size: 100%;
+      outline: none;
+      transition: background 0s;
+    }
+  }
+
+  &.orange {
+    background: $color-orange;
+    color: $color-white;
+    &:hover, &:focus {
+      background: #e0a06e radial-gradient(circle, transparent 1%, #e0a06e 1%) center/15000%;
+      box-shadow: 0 5px 22px 0 rgba($color-orange-rgb, 0.3);
+      outline: none;
+    }
+
+    &:active {
+      background-color: #febd6f;
+      background-size: 100%;
+      outline: none;
+      transition: background 0s;
+    }
+  }
+
+  &.red {
+    background: $color-red;
+    color: $color-white;
+    &:hover, &:focus {
+      background: #d63f6a radial-gradient(circle, transparent 1%, #d63f6a 1%) center/15000%;
+      box-shadow: 0 5px 22px 0 rgba($color-red-rgb, 0.3);
+      outline: none;
+    }
+
+    &:active {
+      background-color: #f4426f;
+      background-size: 100%;
+      outline: none;
+      transition: background 0s;
+    }
+
+
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.disabled{
+    background: #b0b7c1 !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    pointer-events: none !important;
+    &:hover, &:focus {
+      background: #e8e8e8 radial-gradient(circle, transparent 1%, #e8e8e8 1%) center/15000%;
+      box-shadow: 0 5px 25px -10px rgba($color-blue-rgb, 0.3);
+      outline: none;
+    }
+
+    &:active {
+      background-color: #f5f5f5;
+      background-size: 100%;
+      outline: none;
+      transition: background 0s;
+    }
+  }
+
+  &.inverted {
+    &.blue {
+      background: $color-white;
+      color: $color-type-gray;
+      &:hover, &:focus {
+        background: #16b0e3 radial-gradient(circle, transparent 1%, #16b0e3 1%) center/15000%;
+        box-shadow: 0 5px 22px 0 rgba($color-blue-rgb, 0.3);
+        color: $color-white;
+        outline: none;
+        transition: color 0s;
+      }
+
+      &:active {
+        background-color: #18c6ff;
+        background-size: 100%;
+        color: $color-white;
+        outline: none;
+        transition: background 0s;
+      }
+    }
+
+    &.purple {
+      background: $color-white;
+      color: $color-type-gray;
+      &:hover, &:focus {
+        background: #675cb0 radial-gradient(circle, transparent 1%, #675cb0 1%) center/15000%;
+        box-shadow: 0 5px 22px 0 rgba($color-purple, 0.3);
+        color: $color-white;
+        outline: none;
+        transition: color 0s;
+      }
+
+      &:active {
+        background-color: #7e72ce;
+        background-size: 100%;
+        color: $color-white;
+        outline: none;
+        transition: background 0s;
+      }
+    }
+
+    &.white {
+      background: $color-type-gray;
+      color: $color-white;
+      &:hover, &:focus {
+        background: #e8e8e8 radial-gradient(circle, transparent 1%, #e8e8e8 1%) center/15000%;
+        box-shadow: 0 5px 25px -10px rgba($color-blue-rgb, 0.3);
+        color: $color-type-gray;
+        outline: none;
+        transition: color 0s;
+      }
+
+      &:active {
+        background-color: #f5f5f5;
+        background-size: 100%;
+        color: $color-type-gray;
+        outline: none;
+        transition: background 0s;
+      }
+    }
+
+    &.green {
+      background: $color-white;
+      color: $color-type-gray;
+      &:hover, &:focus {
+        background: #2eb59b radial-gradient(circle, transparent 1%, #2eb59b 1%) center/15000%;
+        box-shadow: 0 5px 22px 0 rgba($color-green-rgb, 0.3);
+        color: $color-white;
+        outline: none;
+        transition: color 0s;
+      }
+
+      &:active {
+        background-color: #30d3b8;
+        background-size: 100%;
+        color: $color-white;
+        outline: none;
+        transition: background 0s;
+      }
+    }
+
+    &.orange {
+      background: $color-white;
+      color: $color-type-gray;
+      &:hover, &:focus {
+        background: #e0a06e radial-gradient(circle, transparent 1%, #e0a06e 1%) center/15000%;
+        box-shadow: 0 5px 22px 0 rgba($color-orange-rgb, 0.3);
+        color: $color-white;
+        outline: none;
+        transition: color 0s;
+      }
+
+      &:active {
+        background-color: #febd6f;
+        background-size: 100%;
+        color: $color-white;
+        outline: none;
+        transition: background 0s;
+      }
+    }
+
+    &.red {
+      background: $color-white;
+      color: $color-type-gray;
+
+      &:hover, &:focus {
+        background: #d63f6a radial-gradient(circle, transparent 1%, #d63f6a 1%) center/15000%;
+        box-shadow: 0 5px 22px 0 rgba($color-red-rgb, 0.3);
+        color: $color-white;
+        outline: none;
+        transition: color 0s;
+      }
+
+      &:active {
+        background-color: #f4426f;
+        background-size: 100%;
+        color: $color-white;
+        outline: none;
+        transition: background 0s;
+      }
+    }
+  }
+}

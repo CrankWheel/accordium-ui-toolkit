@@ -1,0 +1,50 @@
+.accordium.tabs {
+  &.vertical {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    .tabs-wrapper{
+      background: $color-lightest-gray;
+      float: left;
+      height: 100%;
+      width: 200px;
+      .tab-item {
+        -moz-box-flex: none;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-user-select: -moz-none;
+        -ms-flex: none;
+        -ms-flex-direction: column;
+        -webkit-box-direction: normal;
+        -webkit-box-flex: none;
+        -webkit-box-orient: vertical;
+        -webkit-flex: none;
+        -webkit-font-smoothing: antialiased;
+        -webkit-transition: -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+        background: transparent no-repeat;
+        border: 0;
+        box-shadow: 0 10px 50px -25px rgba($color-shadows-rgb,.25);
+        color: $color-type-gray;
+        cursor: pointer;
+        display: flex;
+        display: block;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        float: left;
+        padding: 0;
+        position: relative;
+        transition: box-shadow 0.1s ease, transform 0.1s ease;
+        transition: box-shadow 0.1s ease, transform 0.1s ease, -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+        transition: .3s all ease-in-out;
+        transition: -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+        user-select: none;
+        width: 100%;
+      }
+    }
+
+    .content-wrapper{
+      background: $color-white;
+      float: right;
+      width: calc(100% - 200px);
+    }
+  }
+}

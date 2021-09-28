@@ -1,0 +1,61 @@
+.accordium.dropdown-list{
+  .dropdown-list-trigger{
+    background: none;
+    border: 0;
+    cursor: pointer;
+    svg{
+      .color{
+        fill: $color-light-gray;
+        transition: .3s all ease-in-out;
+      }
+    }
+
+    &:hover, &:focus{
+      outline: none;
+      svg{
+        .color{
+          fill: $color-type-gray;
+        }
+      }
+    }
+  }
+
+  .dropdown-list-items{
+    background: $color-white;
+    border-radius: 5px;
+    filter: drop-shadow(rgba(28,47,73,.1) 0 15px 20px);
+    font-weight: 400;
+    list-style-type: none;
+    max-width: 250px;
+    position: relative;
+    text-align: left;
+    .dropdown-list-item{
+      transition: .3s all ease-in-out;
+      .dropdown-list-item-thumbnail{
+        display: inline-block;
+        .accordium.svg-icon.sm{
+          display: inline-block;
+          svg{
+            max-width: 100%;
+          }
+        }
+      }
+
+      .dropdown-list-item-title{
+        color: $color-light-gray;
+        display: inline-block;
+        font-size: 12px;
+        transition: .3s all ease-in-out;
+      }
+
+      &:hover, &:focus{
+        background: $color-lightest-gray;
+        cursor: pointer;
+        outline: none;
+        .dropdown-list-item-title{
+          color: $color-type-gray;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,341 @@
+@import "action-card";
+@import "card-list";
+
+.accordium{
+  &.card {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-transition: -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+    background: $color-white;
+    background: #fff;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 50px -25px rgba($color-shadows-rgb,.25);
+    box-sizing: border-box;
+    color: $color-type-gray;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 1em 0;
+    max-width: 100%;
+    min-height: 150px;
+    padding: 0;
+    position: relative;
+    transition: .3s all ease-in-out;
+    transition: -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+    transition: box-shadow 0.1s ease, transform 0.1s ease, -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+    width: 100%;
+    a {
+      cursor: pointer;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.cards {
+    -ms-flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.875em -0.5em;
+    > .card {
+      -ms-flex-direction: column;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+      -webkit-transition: -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;background: #fff;
+      border: 0;
+      border-radius: 0.28571429rem;
+      box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+      display: -webkit-box;
+      display: flex;
+      display: -webkit-box;
+      display: flex;
+      display: -ms-flexbox;
+      display: -ms-flexbox;
+      flex-direction: column;
+      float: none;
+      margin: 0.875em 0.5em;
+      max-width: 100%;
+      min-height: 0;
+      padding: 0;
+      position: relative;
+      transition: -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+      transition: box-shadow 0.1s ease, transform 0.1s ease;
+      transition: box-shadow 0.1s ease, transform 0.1s ease, -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+      width: 290px;
+      a {
+        cursor: pointer;
+      }
+    }
+
+    &:after {
+      clear: both;
+      content: ' ';
+      display: block;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+
+  &.card:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  &.card > :first-child {
+    border-radius: 0.28571429rem 0.28571429rem 0 0 !important;
+    border-top: 0;
+  }
+
+  &.cards > .card > :last-child, &.card > :last-child {
+    border-radius: 0 0 0.28571429rem 0.28571429rem !important;
+  }
+
+  &.cards > .card > :only-child, &.card > :only-child {
+    border-radius: 0.28571429rem !important;
+  }
+
+  &.cards > .card > .image, &.card > .image {
+    -ms-flex: 0 0 auto;
+    -webkit-box-flex: 0;
+    background: rgba(0, 0, 0, 0.05);
+    display: block;
+    flex: 0 0 auto;
+    padding: 0;
+    position: relative;
+  }
+
+  &.cards > .card > .image > img, &.card > .image > img {
+    border-radius: inherit;
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  &.cards > .card > .image:not(.acc) > img, &.card > .image:not(.acc) > img {
+    border: 0;
+  }
+
+  &.cards > .card > .content, &.card > .content {
+    -ms-flex-positive: 1;
+    -webkit-box-flex: 1;
+    -webkit-box-shadow: none;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    flex-grow: 1;
+    font-size: 12px;
+    margin: 0;
+    padding: 1em 1em;
+  }
+
+  &.cards > .card > .content:after, &.card > .content:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  &.cards > .card > .content > .header, &.card > .content > .header {
+    color: rgba(0, 0, 0, 0.85);
+    display: block;
+    margin: 0;
+  }
+
+  &.cards > .card > .content > .header:not(.acc), &.card > .content > .header:not(.acc) {
+    font-size: 1.28571429rem;
+    font-weight: bold;
+    line-height: 1.28571429em;
+    margin-top: -0.21425em;
+  }
+
+  &.cards > .card > .content > {
+    .caption + .description, .header + .description {
+      margin-top: 0.5em;
+    }
+  }
+
+  &.card > .content > {
+    .caption + .description, .header + .description {
+      margin-top: 0.5em;
+    }
+  }
+
+  &.cards > .card [class*="left floated"], &.card [class*="left floated"] {
+    float: left;
+  }
+
+  &.cards > .card [class*="right floated"], &.card [class*="right floated"] {
+    float: right;
+  }
+
+  &.cards > .card [class*="left aligned"], &.card [class*="left aligned"] {
+    text-align: left;
+  }
+
+  &.cards > .card [class*="center aligned"], &.card [class*="center aligned"] {
+    text-align: center;
+  }
+
+  &.cards > .card [class*="right aligned"], &.card [class*="right aligned"] {
+    text-align: right;
+  }
+
+  &.cards > .card .content img, &.card .content img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &.cards > .card {
+    img.avatar, .avatar img {
+      border-radius: 500rem;
+      height: 2em;
+      width: 2em;
+    }
+  }
+
+  &.card {
+    img.avatar, .avatar img {
+      border-radius: 500rem;
+      height: 2em;
+      width: 2em;
+    }
+  }
+
+  &.cards > .card > .content > .description, &.card > .content > .description {
+    clear: both;
+    color: rgba(0, 0, 0, 0.68);
+  }
+
+  &.cards > .card > .content p, &.card > .content p {
+    margin: 0 0 0.5em;
+  }
+
+  &.cards > .card > .content p:last-child, &.card > .content p:last-child {
+    margin-bottom: 0;
+  }
+
+  &.cards > .card .caption, &.card .caption {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 12px;
+  }
+
+  &.cards > .card .caption *, &.card .caption * {
+    margin-right: 0.3em;
+  }
+
+  &.cards > .card .caption :last-child, &.card .caption :last-child {
+    margin-right: 0;
+  }
+
+  &.cards > .card .caption [class*="right floated"], &.card .caption [class*="right floated"] {
+    margin-left: 0.3em;
+    margin-right: 0;
+  }
+
+  &.cards > .card > .content a:not(.acc), &.card > .content a:not(.acc) {
+    -webkit-transition: color 0.1s ease;
+    transition: color 0.1s ease;
+  }
+
+  &.cards > .card > .content > a.header, &.card > .content > a.header {
+    color: #5a788f;
+  }
+
+  &.cards > .card > .content > a.header:hover, &.card > .content > a.header:hover {
+    color: #1e70bf;
+  }
+
+  &.cards > .card .caption > a:not(.acc), &.card .caption > a:not(.acc) {
+    color: #b0b7c1;
+  }
+
+  &.cards > .card .caption > a:not(.acc):hover, &.card .caption > a:not(.acc):hover {
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  &.cards > .card > .buttons, &.card > .buttons, &.cards > .card > .button, &.card > .button {
+    margin: 0 -1px;
+    width: calc(100% +  2px );
+  }
+
+  &.cards > .card .dimmer, &.card .dimmer {
+    z-index: 10;
+  }
+
+  &.cards > .card > .extra, &.card > .extra {
+    -ms-flex-positive: 0;
+    -webkit-box-flex: 0;
+    -webkit-box-shadow: none;
+    -webkit-transition: color 0.1s ease;
+    background: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: none;
+    color: rgba(0, 0, 0, 0.4);
+    flex-grow: 0;
+    left: 0;
+    margin: 0 0;
+    max-width: 100%;
+    min-height: 0 !important;
+    padding: 0.75em 1em;
+    position: static;
+    top: 0;
+    transition: color 0.1s ease;
+    width: auto;
+  }
+
+  &.cards > .card > .extra a:not(.acc), &.card > .extra a:not(.acc) {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  &.cards > .card > .extra a:not(.acc):hover, &.card > .extra a:not(.acc):hover {
+    color: #1e70bf;
+  }
+
+  &.centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.fluid {
+    max-width: 9999px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .accordium.stackable.cards {
+    display: block !important;
+    .card:first-child {
+      margin-top: 0 !important;
+    }
+
+    > .card {
+      display: block !important;
+      height: auto !important;
+      margin: 1em 1em;
+      padding: 0 !important;
+      width: calc( 100%  -  2em ) !important;
+    }
+  }
+}

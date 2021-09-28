@@ -1,0 +1,77 @@
+$duration: 1.4s;
+$offset: 37.4;
+
+.accordium.loading-spinner {
+  svg {
+    animation: rotator $duration linear infinite;
+    left: -1px;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+
+    .path {
+      animation:
+              dash $duration ease-in-out infinite,
+              colors ($duration*4) ease-in-out infinite;
+      stroke-dasharray: 37.4;
+      stroke-dashoffset: 0;
+      transform-origin: center;
+    }
+  }
+
+  &.inverted {
+    color: #454f5e;
+    svg {
+      .path {
+        animation:
+                dash $duration ease-in-out infinite,
+                colors-inverted ($duration*4) ease-in-out infinite;
+
+      }
+    }
+  }
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg);}
+
+  100% { transform: rotate(270deg);}
+}
+
+@keyframes colors {
+  0% { stroke: #fff; }
+
+  25% { stroke: rgba(255,255,255,0); }
+
+  50% { stroke: #fff; }
+
+  75% { stroke: rgba(255,255,255,0);; }
+
+  100% { stroke: #fff; }
+}
+
+@keyframes colors-inverted {
+  0% { stroke: #454f5e; }
+
+  25% { stroke: rgba(255,255,255,0); }
+
+  50% { stroke: #454f5e; }
+
+  75% { stroke: rgba(255,255,255,0);; }
+
+  100% { stroke: #454f5e; }
+}
+
+@keyframes dash {
+  0% { stroke-dashoffset: $offset; }
+
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
