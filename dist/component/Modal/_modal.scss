@@ -69,7 +69,7 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
     display: block;
     float: left;
     margin: 0;
-    padding: 1.5rem;
+    padding: 24px;
     width: 100%;
     a {
       color: $color-type-gray;
@@ -90,7 +90,7 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
     font-size: 1em;
     line-height: 1.4;
     overflow: auto;
-    padding: 0 2.5rem;
+    padding: 0 40px;
     position: relative;
     width: 100%;
     &.scrolling {
@@ -162,12 +162,12 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 ---------------*/
 
 .accordium.modal {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 /* Mini */
 .accordium.xs.modal > .header:not(.acc) {
-  font-size: 1.3em;
+  font-size: 20.8px;
 }
 
 /* Mini Modal Width */

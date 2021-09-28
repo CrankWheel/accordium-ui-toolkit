@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "ActionCard", {
   enumerable: true,
   get: function () {
-    return _index.default;
+    return _ActionCard.default;
   }
 });
 Object.defineProperty(exports, "CardList", {
   enumerable: true,
   get: function () {
-    return _index2.default;
+    return _CardList.default;
   }
 });
 Object.defineProperty(exports, "CardListItem", {
@@ -24,7 +24,7 @@ Object.defineProperty(exports, "CardListItem", {
 Object.defineProperty(exports, "Card", {
   enumerable: true,
   get: function () {
-    return _index3.default;
+    return _Card.default;
   }
 });
 Object.defineProperty(exports, "CardContent", {
@@ -58,13 +58,13 @@ Object.defineProperty(exports, "CardExtraContent", {
   }
 });
 
-var _index = _interopRequireDefault(require("./ActionCard/index"));
+var _ActionCard = _interopRequireDefault(require("./ActionCard"));
 
-var _index2 = _interopRequireDefault(require("./CardList/index"));
+var _CardList = _interopRequireDefault(require("./CardList"));
 
 var _CardListItem = _interopRequireDefault(require("./CardList/CardListItem"));
 
-var _index3 = _interopRequireDefault(require("./Card/index"));
+var _Card = _interopRequireDefault(require("./Card"));
 
 var _CardContent = _interopRequireDefault(require("./Card/CardContent"));
 

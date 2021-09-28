@@ -6,26 +6,26 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "Player", {
   enumerable: true,
   get: function () {
-    return _index.default;
+    return _DefaultPlayer.default;
   }
 });
 Object.defineProperty(exports, "CircularPlayer", {
   enumerable: true,
   get: function () {
-    return _index2.default;
+    return _CircularPlayer.default;
   }
 });
 Object.defineProperty(exports, "Recorder", {
   enumerable: true,
   get: function () {
-    return _index3.default;
+    return _Recorder.default;
   }
 });
 
-var _index = _interopRequireDefault(require("./DefaultPlayer/index"));
+var _DefaultPlayer = _interopRequireDefault(require("./DefaultPlayer"));
 
-var _index2 = _interopRequireDefault(require("./CircularPlayer/index"));
+var _CircularPlayer = _interopRequireDefault(require("./CircularPlayer"));
 
-var _index3 = _interopRequireDefault(require("./Recorder/index"));
+var _Recorder = _interopRequireDefault(require("./Recorder"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
